@@ -29,10 +29,16 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
     gsap.ticker.add(raf)
     gsap.ticker.lagSmoothing(0)
 
+    // Expose for smoke tests / debugging only — lets scripts call
+    // (window as any).__lenis.scrollTo(target, { immediate: true })
+    // to bypass the smooth animation.
+    ;(window as unknown as { __lenis?: Lenis }).__lenis = lenis
+
     return () => {
       gsap.ticker.remove(raf)
       lenis.destroy()
       lenisRef.current = null
+      delete (window as unknown as { __lenis?: Lenis }).__lenis
     }
   }, [])
 
