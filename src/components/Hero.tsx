@@ -1,7 +1,15 @@
+// src/components/Hero.tsx
+// First-screen hero. Left: name, role, bio, location/email chips.
+// Right: a particle-assembled portrait — particles fly in from off-screen
+// and converge onto the image as the user scrolls. The full image
+// resolves at native resolution once the hero has scrolled past.
 import { useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
 import { data } from '../data'
+import { ParticleReveal } from './ParticleReveal'
+import { PORTRAIT_PARTICLES } from '../data/particle'
+import portraitSrc from '../assets/portrait.png'
 
 const headlineWords = ['Yashraj', 'Shitole', '—', 'Software', 'Engineer']
 
@@ -27,10 +35,10 @@ export function Hero() {
       })
         .from('.hero__sub', { y: 12, opacity: 0, duration: 0.6 }, '-=0.4')
         .from('.hero__meta', { y: 8, opacity: 0, duration: 0.5, stagger: 0.08 }, '-=0.4')
-        .from('.code-hint', { y: 24, opacity: 0, duration: 0.8 }, '-=0.5')
         .from('.scroll-cue', { opacity: 0, y: 12, duration: 0.5 }, '-=0.3')
 
-      // Infinite float on decorative shapes
+      // Infinite float on decorative shapes (left side only — the right
+      // side holds the portrait, so right-side dots would overlap it).
       if (floatingRef.current) {
         gsap.utils.toArray<HTMLElement>('.hero__float').forEach((node, idx) => {
           gsap.to(node, {
@@ -43,18 +51,6 @@ export function Hero() {
           })
         })
       }
-
-      // Subtle parallax on the code hint as you scroll
-      gsap.to('.code-hint', {
-        yPercent: -12,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: el,
-          start: 'top top',
-          end: 'bottom top',
-          scrub: true,
-        },
-      })
     },
     { scope: container },
   )
@@ -66,12 +62,10 @@ export function Hero() {
       className="section--hero relative flex items-center"
       style={{ background: 'hsl(var(--bg-h) var(--bg-s) var(--bg-l))' }}
     >
-      {/* Decorative floating accents */}
+      {/* Decorative floating accents (left side only) */}
       <div ref={floatingRef} aria-hidden="true" className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="hero__float absolute left-[8%] top-[24%] w-2 h-2 rounded-full" style={{ background: 'hsl(var(--accent-h) var(--accent-s) var(--accent-l))' }} />
-        <div className="hero__float absolute right-[14%] top-[18%] w-3 h-3 rounded-full" style={{ background: 'hsl(var(--accent-h) var(--accent-s) var(--accent-l) / 0.5)' }} />
         <div className="hero__float absolute left-[20%] bottom-[22%] w-1.5 h-1.5 rounded-full" style={{ background: 'hsl(var(--ink-h) var(--ink-s) var(--ink-l) / 0.4)' }} />
-        <div className="hero__float absolute right-[8%] bottom-[18%] w-2.5 h-2.5 rounded-full" style={{ background: 'hsl(var(--ink-h) var(--ink-s) var(--ink-l) / 0.25)' }} />
       </div>
 
       <div className="container-x relative w-full">
@@ -110,7 +104,15 @@ export function Hero() {
           </div>
 
           <div className="col-span-12 lg:col-span-4 lg:col-start-9 mt-12 lg:mt-0">
-            <CodeHint />
+            <ParticleReveal
+              src={portraitSrc}
+              manifest={PORTRAIT_PARTICLES}
+              alt="Portrait of Yashraj Shitole"
+              caption="// subject.01 — particle assembly"
+              meta={`${PORTRAIT_PARTICLES.count} px · native ${PORTRAIT_PARTICLES.sourceSize[0]}×${PORTRAIT_PARTICLES.sourceSize[1]} · from off-screen`}
+              cursorLabel="subject.01"
+              maxWidth="100%"
+            />
           </div>
         </div>
 
@@ -120,36 +122,5 @@ export function Hero() {
         </div>
       </div>
     </section>
-  )
-}
-
-function CodeHint() {
-  return (
-    <div
-      className="code-hint glass rounded-lg p-5 font-mono text-sm leading-relaxed"
-      data-cursor="// bash"
-    >
-      <div className="flex items-center gap-1.5 pb-3 mb-3 hairline border-b">
-        <span className="w-2.5 h-2.5 rounded-full" style={{ background: 'hsl(var(--ink-soft-h) var(--ink-soft-s) var(--ink-soft-l) / 0.5)' }} />
-        <span className="w-2.5 h-2.5 rounded-full" style={{ background: 'hsl(var(--ink-soft-h) var(--ink-soft-s) var(--ink-soft-l) / 0.5)' }} />
-        <span className="w-2.5 h-2.5 rounded-full" style={{ background: 'hsl(var(--ink-soft-h) var(--ink-soft-s) var(--ink-soft-l) / 0.5)' }} />
-        <span className="label-cap ml-2">~/{data.profile.name.toLowerCase().split(' ')[0]}</span>
-      </div>
-      <pre className="whitespace-pre-wrap break-words">
-        {data.codeHint.lines.map((line, i) => (
-          <div
-            key={i}
-            style={{
-              color:
-                line.type === 'comment' ? 'hsl(var(--ink-soft-h) var(--ink-soft-s) var(--ink-soft-l))'
-                : line.type === 'command' ? 'hsl(var(--ink-h) var(--ink-s) var(--ink-l))'
-                : 'hsl(var(--accent-h) var(--accent-s) var(--accent-l))',
-            }}
-          >
-            {line.text || ' '}
-          </div>
-        ))}
-      </pre>
-    </div>
   )
 }

@@ -9,7 +9,7 @@ import { spawn } from 'node:child_process'
 import { writeFileSync } from 'node:fs'
 import { setTimeout as wait } from 'node:timers/promises'
 
-const URL = 'http://localhost:5180/'
+const URL = 'http://localhost:5181/'
 const OUT = (name) => `Y:/AI_Projects/Portfolio/screenshots/verify-${name}.png`
 
 const port = 9333
@@ -140,16 +140,10 @@ await wait(1500)
 await screenshot('flyout-mid')
 
 // t = 12s: well after the full fly-out (1 + 6 + 0.5 + 2 + 1.5 = 11s).
-//   All particles should be off-screen; image still at 80% opacity.
+//   All particles should be off-screen; image at 80% opacity.
+//   (No scroll-driven merge anymore — image stays at 80% forever.)
 await wait(2000)
 await screenshot('after-flyout')
-
-// Scroll to push image to 100%. Since we use `instant: true` for
-// scroll, image opacity should jump and remaining particles (if
-// any) snap to targets.
-await sendSession('Runtime.evaluate', { expression: 'window.scrollTo({top: 600, behavior: "instant"})' })
-await wait(900)
-await screenshot('after-scroll')
 
 // Pull the frame-time samples and report.
 const fpsResult = await sendSession('Runtime.evaluate', {

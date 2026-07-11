@@ -29,8 +29,6 @@
 // no particles left.
 import { useRef, useMemo, useState, useLayoutEffect } from 'react'
 import { useGSAP } from '@gsap/react'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import type { ParticleManifest } from '../data/particle'
 
 export interface ParticleRevealProps {
@@ -53,13 +51,6 @@ export interface ParticleRevealProps {
    *  edges of the user's viewport; "section" = from the edges of this
    *  component. Default "viewport" — particles fly across the screen. */
   flyOrigin?: 'viewport' | 'section'
-  /** Optional external trigger element for the ScrollTrigger. When set,
-   *  the assembly progress (0..1) maps to the scroll range of this
-   *  element rather than the wrap. Useful when the wrap is small and
-   *  nested inside a larger scrollable ancestor (e.g. the hero) — the
-   *  caller can anchor the reveal to the ancestor's full height.
-   *  Defaults to the wrap itself. */
-  triggerRef?: React.RefObject<HTMLElement | null>
 }
 
 // Seeded PRNG — same scatter pattern every render.
@@ -106,7 +97,6 @@ export function ParticleReveal({
   cursorLabel,
   maxWidth = '560px',
   flyOrigin = 'viewport',
-  triggerRef,
 }: ParticleRevealProps) {
   const wrapRef = useRef<HTMLDivElement>(null)
   const imgWrapRef = useRef<HTMLDivElement>(null)
@@ -263,19 +253,6 @@ export function ParticleReveal({
       const prevStop = (wrap as any).__stop
       if (typeof prevStop === 'function') prevStop()
 
-      // Capture the wrap element — narrowing works as long as we
-      // reference it once outside the closure.
-      const wrapEl = wrap
-
-      // Trigger element: by default the wrap itself, so progress 0..1
-      // maps to "wrap top hits viewport top" → "wrap bottom hits
-      // viewport top" — exactly the trigger's height of scroll range.
-      // When the caller passes a `triggerRef` (e.g. a larger ancestor
-      // like the hero), we use that instead so the progress maps to the
-      // ancestor's full scroll range.
-      const scrollState = { t: 0 }
-      const triggerEl = triggerRef?.current ?? wrapEl
-
       // Capture the load-time origin so phase 0/1 timing is anchored
       // to mount, not to the first paint() call. The wait runs even
       // if the first paint() happens a frame later.
@@ -283,8 +260,7 @@ export function ParticleReveal({
 
       // paint() — runs every frame that either state changes. Switches
       // between the three phases (wait → fly-in → float → fly-out)
-      // based on elapsed time since mount and current scroll
-      // progress.
+      // based on elapsed time since mount.
       function paint() {
         if (!size.w) return
         const positions = particlePositions
@@ -296,20 +272,16 @@ export function ParticleReveal({
         const wrapLeft = wr.left
         const wrapTop = wr.top
 
-        // Image reveal — rises 0 → 0.8 during the fly-in, then
-        // continues to 1.0 driven by scroll. The time-based
-        // fly-out does not touch image opacity; the user has to
-        // scroll to complete the merge past 80%.
+        // Image reveal — rises 0 → 0.8 during the fly-in and
+        // stays there. The time-based fly-out does not touch
+        // image opacity; there's no scroll-driven merge anymore
+        // (the user removed the scroll effect).
         const elapsed = performance.now() - loadStart
         const phase1Alpha =
           elapsed <= WAIT_MS
             ? 0
             : Math.min(1, (elapsed - WAIT_MS) / FLY_MS)
-        const imgOpacity = Math.min(
-          1,
-          PHASE1_MERGE * phase1Alpha +
-            (1 - PHASE1_MERGE) * scrollState.t,
-        )
+        const imgOpacity = PHASE1_MERGE * phase1Alpha
         if (imgWrapRef.current) {
           imgWrapRef.current.style.opacity = String(imgOpacity)
         }
@@ -336,20 +308,12 @@ export function ParticleReveal({
           return
         }
 
-        // Per-particle: compute the time-based "how merged is the
-        // waypoint-to-target transition" alpha. Without scroll
-        // intervention, this is 0 during the float hold, then
-        // climbs to 1 over each particle's fly-out window. With
-        // scroll, we use whichever is further along — the user
-        // can still scroll-snap the image to 100%.
+        // Per-particle: each particle stays at the waypoint
+        // during the float hold, then waits a per-particle random
+        // delay before flying out to a random viewport edge over
+        // FLY_OUT_MS. There's no scroll-driven merge anymore.
         // (Pre-compute the shared base values; the per-particle
         // offset is computed inline below.)
-        // We also use scrollState.t directly to gate the time-based
-        // fly-out: once the user scrolls past, particles that
-        // haven't flown out yet snap into the image instead of
-        // flying off. That's a more useful behavior than continuing
-        // to fly them out while the user is clearly trying to read
-        // the image.
 
         const els = particlesRef.current
         for (let i = 0; i < els.length; i++) {
@@ -403,19 +367,6 @@ export function ParticleReveal({
             y = sy
             rotDeg = 0
             alpha = 0
-          } else if (scrollState.t > 0) {
-            // Scroll-driven merge: lerp from waypoint to target
-            // by scrollState.t. If the user scrolls, this branch
-            // wins regardless of where each particle is in its
-            // fly-out timing. Particles end up at their targets
-            // and the image at 100%.
-            const m = scrollState.t
-            const mergedX = (1 - m) * wx + m * tx
-            const mergedY = (1 - m) * wy + m * ty
-            x = mergedX + ox
-            y = mergedY + oy
-            rotDeg = t.rotPhase + (t.rotSpeed * tFloat) * (180 / Math.PI)
-            alpha = 1
           } else {
             // Position while flying in / floating at the waypoint.
             x = sx + (wx - sx) * phase1Eased + ox
@@ -521,22 +472,10 @@ export function ParticleReveal({
       }
       ;(wrap as any).__stop = stop
 
-      // Phase 2 — scroll-driven merge. Tweens scrollState.t 0→1 as
-      // the trigger element scrolls past the viewport. Once
-      // scrollState.t > 0, paint() switches to reading it and the
-      // 80% waypoint collapses into the final target. The float
-      // and rotation taper off as the merge completes.
-      gsap.to(scrollState, {
-        t: 1,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: triggerEl,
-          start: 'top top',
-          end: 'bottom top',
-          scrub: 0.6,
-        },
-        onUpdate: paint,
-      })
+      // No scroll-driven phase anymore — the user removed the
+      // scroll effect. The image reveals to 80% during the
+      // fly-in and stays there; particles fly out on a fixed
+      // timeline after the float hold.
 
       paint()
     },
