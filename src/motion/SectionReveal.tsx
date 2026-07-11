@@ -11,10 +11,14 @@ export function SectionReveal({
   id,
   className = '',
   children,
+  decor,
 }: {
   id: string
   className?: string
   children: React.ReactNode
+  /** Optional decorative SVG objects rendered as siblings of the content,
+   *  absolutely positioned within the section so they sit behind the text. */
+  decor?: React.ReactNode
 }) {
   const container = useRef<HTMLElement>(null)
   const reduced = useRef(false)
@@ -47,8 +51,11 @@ export function SectionReveal({
   )
 
   return (
-    <section id={id} ref={container} className={`section ${className}`}>
-      {children}
+    <section id={id} ref={container} className={`section relative isolate overflow-hidden ${className}`}>
+      {decor}
+      <div className="relative z-10">
+        {children}
+      </div>
     </section>
   )
 }

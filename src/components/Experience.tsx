@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
 import { SectionReveal } from '../motion/SectionReveal'
+import { SectionDecor } from './SectionDecor'
 import { data, type Experience } from '../data'
 
 function fmt(d: string): string {
@@ -15,7 +16,41 @@ function fmt(d: string): string {
 
 export function ExperienceSection() {
   return (
-    <SectionReveal id="experience" className="container-x">
+    <SectionReveal
+      id="experience"
+      className="container-x"
+      decor={
+        <>
+          <SectionDecor
+            shape="circle"
+            size={100}
+            className="top-32 -right-6"
+            path={[{ x: 0, y: 0 }, { x: -80, y: 120 }, { x: -40, y: 280 }, { x: -120, y: 420 }]}
+            rotateBy={120}
+            opacity={0.5}
+            delay={0}
+          />
+          <SectionDecor
+            shape="dot-cluster"
+            size={80}
+            className="top-2/3 -left-6"
+            path={[{ x: 0, y: 0 }, { x: 80, y: -80 }, { x: 120, y: -200 }, { x: 60, y: -320 }]}
+            rotateBy={-45}
+            opacity={0.4}
+            delay={0.05}
+          />
+          <SectionDecor
+            shape="squiggle"
+            size={140}
+            className="bottom-10 right-1/4"
+            path={[{ x: 0, y: 0 }, { x: -60, y: -60 }, { x: 20, y: -160 }, { x: -80, y: -240 }]}
+            rotateBy={0}
+            opacity={0.45}
+            delay={0.1}
+          />
+        </>
+      }
+    >
       <div data-reveal>
         <p className="label-cap">// 02 — experience</p>
         <h2 className="mt-3 font-display text-[length:var(--type-2xl)] font-medium leading-tight tracking-tight">

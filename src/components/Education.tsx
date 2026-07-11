@@ -1,4 +1,5 @@
 import { SectionReveal } from '../motion/SectionReveal'
+import { SectionDecor } from './SectionDecor'
 import { data } from '../data'
 
 function fmt(d: string): string {
@@ -12,7 +13,32 @@ function fmt(d: string): string {
 
 export function Education() {
   return (
-    <SectionReveal id="education" className="container-x">
+    <SectionReveal
+      id="education"
+      className="container-x"
+      decor={
+        <>
+          <SectionDecor
+            shape="ring"
+            size={100}
+            className="top-20 right-1/4"
+            path={[{ x: 0, y: 0 }, { x: -60, y: 80 }, { x: 20, y: 180 }, { x: -80, y: 280 }]}
+            rotateBy={90}
+            opacity={0.5}
+            delay={0}
+          />
+          <SectionDecor
+            shape="diamond"
+            size={70}
+            className="top-1/2 left-1/4"
+            path={[{ x: 0, y: 0 }, { x: 80, y: -40 }, { x: 40, y: -140 }, { x: 100, y: -240 }]}
+            rotateBy={-90}
+            opacity={0.45}
+            delay={0.05}
+          />
+        </>
+      }
+    >
       <div data-reveal>
         <p className="label-cap">// 05 — education & awards</p>
         <h2 className="mt-3 font-display text-[length:var(--type-2xl)] font-medium leading-tight tracking-tight">

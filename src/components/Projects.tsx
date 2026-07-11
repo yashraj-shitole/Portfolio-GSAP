@@ -4,11 +4,46 @@ import { gsap } from 'gsap'
 import { motion } from 'framer-motion'
 import { ArrowUpRight, Github, ExternalLink } from 'lucide-react'
 import { SectionReveal } from '../motion/SectionReveal'
+import { SectionDecor } from './SectionDecor'
 import { data, type Project } from '../data'
 
 export function Projects() {
   return (
-    <SectionReveal id="projects" className="container-x">
+    <SectionReveal
+      id="projects"
+      className="container-x"
+      decor={
+        <>
+          <SectionDecor
+            shape="diamond"
+            size={110}
+            className="top-24 -left-8"
+            path={[{ x: 0, y: 0 }, { x: 80, y: 100 }, { x: 40, y: 240 }, { x: 120, y: 360 }]}
+            rotateBy={180}
+            opacity={0.5}
+            delay={0}
+          />
+          <SectionDecor
+            shape="circle"
+            size={90}
+            className="top-1/2 -right-10"
+            path={[{ x: 0, y: 0 }, { x: -100, y: 80 }, { x: -60, y: 220 }, { x: -140, y: 340 }]}
+            rotateBy={-120}
+            opacity={0.4}
+            delay={0.05}
+          />
+          <SectionDecor
+            shape="squiggle"
+            size={120}
+            className="bottom-16 left-1/3"
+            path={[{ x: 0, y: 0 }, { x: 60, y: -80 }, { x: 100, y: -180 }, { x: 40, y: -280 }]}
+            rotateBy={0}
+            opacity={0.45}
+            delay={0.1}
+          />
+        </>
+      }
+    >
       <div data-reveal>
         <p className="label-cap">// 04 — projects</p>
         <h2 className="mt-3 font-display text-[length:var(--type-2xl)] font-medium leading-tight tracking-tight">

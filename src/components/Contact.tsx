@@ -1,11 +1,46 @@
 import { SectionReveal } from '../motion/SectionReveal'
+import { SectionDecor } from './SectionDecor'
 import { useMagnetic } from '../motion/useMagnetic'
 import { data } from '../data'
 import { ArrowUp, Github, Linkedin, Globe, Mail } from 'lucide-react'
 
 export function Contact() {
   return (
-    <SectionReveal id="contact" className="container-x">
+    <SectionReveal
+      id="contact"
+      className="container-x"
+      decor={
+        <>
+          <SectionDecor
+            shape="plus"
+            size={80}
+            className="top-12 -left-4"
+            path={[{ x: 0, y: 0 }, { x: 80, y: 100 }, { x: 40, y: 200 }, { x: 100, y: 300 }]}
+            rotateBy={360}
+            opacity={0.5}
+            delay={0}
+          />
+          <SectionDecor
+            shape="circle"
+            size={100}
+            className="top-1/3 -right-8"
+            path={[{ x: 0, y: 0 }, { x: -80, y: 80 }, { x: -40, y: 200 }, { x: -100, y: 300 }]}
+            rotateBy={120}
+            opacity={0.4}
+            delay={0.05}
+          />
+          <SectionDecor
+            shape="ring"
+            size={60}
+            className="bottom-32 right-1/3"
+            path={[{ x: 0, y: 0 }, { x: -40, y: -60 }, { x: 0, y: -160 }, { x: -60, y: -240 }]}
+            rotateBy={90}
+            opacity={0.5}
+            delay={0.1}
+          />
+        </>
+      }
+    >
       <div data-reveal>
         <p className="label-cap">// 06 — contact</p>
         <h2 className="mt-3 font-display text-[length:var(--type-2xl)] font-medium leading-tight tracking-tight">

@@ -15,6 +15,7 @@ import { Projects } from './components/Projects'
 import { Education } from './components/Education'
 import { Contact, Footer } from './components/Contact'
 import { Marquee } from './components/Marquee'
+import { ScrollPath } from './components/ScrollPath'
 
 // Register GSAP plugins once at the app root.
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin, CustomEase)
@@ -42,6 +43,7 @@ export default function App() {
     <>
       <SmoothScroll>
         <CursorGlow />
+        <ScrollPath />
         <Nav />
         <main>
           <Hero />

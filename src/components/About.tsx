@@ -2,11 +2,47 @@ import { useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
 import { SectionReveal } from '../motion/SectionReveal'
+import { SectionDecor } from './SectionDecor'
 import { data } from '../data'
 
 export function About() {
   return (
-    <SectionReveal id="about" className="container-x">
+    <SectionReveal
+      id="about"
+      className="container-x"
+      decor={
+        <>
+          <SectionDecor
+            shape="ring"
+            size={120}
+            className="top-12 -left-8"
+            path={[{ x: 0, y: 0 }, { x: 80, y: 120 }, { x: 40, y: 260 }, { x: 140, y: 400 }]}
+            rotateBy={180}
+            opacity={0.55}
+            delay={0}
+          />
+          <SectionDecor
+            shape="plus"
+            size={70}
+            className="top-1/3 -right-4"
+            path={[{ x: 0, y: 0 }, { x: -60, y: 100 }, { x: 20, y: 220 }, { x: -80, y: 340 }]}
+            rotateStart={0}
+            rotateBy={360}
+            opacity={0.5}
+            delay={0.05}
+          />
+          <SectionDecor
+            shape="diamond"
+            size={90}
+            className="bottom-20 left-1/4"
+            path={[{ x: 0, y: 0 }, { x: 100, y: -60 }, { x: 60, y: -180 }, { x: 180, y: -260 }]}
+            rotateBy={-90}
+            opacity={0.45}
+            delay={0.1}
+          />
+        </>
+      }
+    >
       <div data-reveal>
         <p className="label-cap">// 01 — about</p>
         <h2 className="mt-3 font-display text-[length:var(--type-2xl)] font-medium leading-tight tracking-tight">
