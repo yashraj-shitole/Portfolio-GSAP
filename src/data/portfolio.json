@@ -1,0 +1,411 @@
+{
+  "site": {
+    "name": "Yashraj Shitole",
+    "title": "Yashraj Shitole — Software Engineer",
+    "description": "Portfolio of Yashraj Shitole — full-stack software engineer specializing in Angular, MERN, and Spring Boot. Currently building production software at Raykor Technologies.",
+    "loader": {
+      "logoText": "YS",
+      "messages": [
+        "Loading Components...",
+        "Initializing Portfolio...",
+        "Compiling Experience...",
+        "Rendering Projects...",
+        "Building Developer Profile...",
+        "Ready."
+      ],
+      "messageIntervalMs": 220,
+      "minDurationMs": 1200
+    }
+  },
+  "profile": {
+    "name": "Yashraj Shitole",
+    "tagline": "Java • Spring Boot • TypeScript • React • Angular",
+    "bio": "Full-stack software engineer with experience across Angular, MERN, and Spring Boot. Currently building production software at Raykor Technologies; previously interned at RacksonsIT Developers and QSective Solutions. PG Diploma in Advanced Computing (CDAC, SunBeam, 2025); B.Tech in Computer Science.",
+    "avatar": "https://avatars.githubusercontent.com/u/71110021?v=4",
+    "location": "Kolhapur, Maharashtra, India",
+    "email": "yashraj.r.shitole@gmail.com",
+    "stats": [
+      { "label": "Years building", "value": 3, "suffix": "+" },
+      { "label": "Projects shipped", "value": 5, "suffix": "" },
+      { "label": "LinkedIn followers", "value": 574, "suffix": "" },
+      { "label": "Cups of chai", "value": 1240, "suffix": "+" }
+    ],
+    "funFacts": [
+      { "icon": "🏸", "label": "District-level badminton champion" },
+      { "icon": "📚", "label": "Wrote a survey paper on Blockchain (IJARIIE, 2023)" },
+      { "icon": "🧠", "label": "Capgemini Java Full Stack 'A' grade" },
+      { "icon": "🚀", "label": "Top-6 finish at Sunbeam Hackathon 2024" }
+    ]
+  },
+  "codeHint": {
+    "language": "bash",
+    "lines": [
+      { "type": "comment", "text": "// whoami" },
+      { "type": "command", "text": "$ yashraj --role \"Software Engineer\"" },
+      { "type": "output", "text": "→ Angular, MERN, Spring Boot" },
+      { "type": "comment", "text": "" },
+      { "type": "command", "text": "$ yashraj --current" },
+      { "type": "output", "text": "→ Building at Raykor Technologies" }
+    ]
+  },
+  "sections": [
+    { "id": "about", "title": "About", "subtitle": "Who I am, what I build, why I build it." },
+    { "id": "experience", "title": "Experience", "subtitle": "Where I've shipped software." },
+    { "id": "skills", "title": "Skills", "subtitle": "Tools I reach for, in the order I reach for them." },
+    { "id": "projects", "title": "Projects", "subtitle": "Selected work — a few of the things I've built." },
+    { "id": "education", "title": "Education & Awards", "subtitle": "Where I learned, and what I was recognized for." },
+    { "id": "contact", "title": "Contact", "subtitle": "Let's build something." }
+  ],
+  "skills": [
+    {
+      "category": "Languages",
+      "items": [
+        { "name": "Java", "level": 90 },
+        { "name": "TypeScript", "level": 85 },
+        { "name": "JavaScript", "level": 88 },
+        { "name": "C++", "level": 70 },
+        { "name": "C#", "level": 65 }
+      ]
+    },
+    {
+      "category": "Web Frameworks",
+      "items": [
+        { "name": "Angular", "level": 88 },
+        { "name": "React", "level": 85 },
+        { "name": "Spring Boot", "level": 80 },
+        { "name": "Express.js", "level": 80 },
+        { "name": "TailwindCSS", "level": 85 }
+      ]
+    },
+    {
+      "category": "Backend",
+      "items": [
+        { "name": "Node.js", "level": 85 },
+        { "name": "REST APIs", "level": 88 }
+      ]
+    },
+    {
+      "category": "Mobile",
+      "items": [
+        { "name": "Android (Java)", "level": 70 }
+      ]
+    },
+    {
+      "category": "Databases",
+      "items": [
+        { "name": "MySQL", "level": 85 },
+        { "name": "MongoDB", "level": 80 }
+      ]
+    },
+    {
+      "category": "Tools",
+      "items": [
+        { "name": "Git", "level": 90 },
+        { "name": "VS Code", "level": 95 },
+        { "name": "Eclipse", "level": 70 }
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "company": "Raykor Technologies Pvt. Ltd.",
+      "role": "Software Engineer",
+      "start": "2025-04",
+      "end": null,
+      "current": true,
+      "location": "Pune District, Maharashtra, India",
+      "mode": "On-site",
+      "stack": ["Angular", "Node.js", "TypeScript", "Spring Boot", "MySQL"],
+      "summary": "Building production software for enterprise clients. End-to-end ownership: requirements, design, implementation, deployment.",
+      "highlights": [
+        "Shipped a multi-tenant Angular application used daily by client operators.",
+        "Designed and implemented REST APIs with Node.js and Spring Boot.",
+        "Owned the release pipeline and on-call rotation."
+      ]
+    },
+    {
+      "company": "RacksonsIT Developers Pvt. Ltd.",
+      "role": "Full Stack Developer (Intern)",
+      "start": "2024-01",
+      "end": "2024-08",
+      "current": false,
+      "mode": "Hybrid",
+      "stack": ["MERN", "React", "Node.js", "Express.js"],
+      "summary": "End-to-end web development lifecycle for client projects.",
+      "highlights": [
+        "Collaborated with clients to gather and handle requirements.",
+        "Designed and implemented UI using ReactJS and TailwindCSS.",
+        "Deployed a fully functional, responsive website.",
+        "Ensured cross-browser compatibility."
+      ]
+    },
+    {
+      "company": "QSective Solutions",
+      "role": "Android Developer (Intern)",
+      "start": "2022-07",
+      "end": "2022-08",
+      "current": false,
+      "location": "Kolhapur, Maharashtra, India",
+      "stack": ["Android", "Java"],
+      "summary": "Built an Android module for an internal tool. First professional exposure to mobile development.",
+      "highlights": [
+        "Implemented UI components in Java / Android SDK.",
+        "Worked with REST endpoints and local storage."
+      ]
+    },
+    {
+      "company": "Shivneri Systems",
+      "role": "Frontend Web Developer (Apprentice)",
+      "start": "2022-02",
+      "end": "2022-03",
+      "current": false,
+      "location": "Kolhapur, Maharashtra, India",
+      "stack": ["HTML", "CSS"],
+      "summary": "Two-month apprenticeship building static marketing pages.",
+      "highlights": [
+        "Hand-coded responsive HTML and CSS layouts.",
+        "First professional exposure to web development."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "dattayog",
+      "name": "Dattayog Farmers PVT. LTD. Website",
+      "tagline": "Marketing site for an agricultural and dairy products company.",
+      "description": "Built a marketing website for Dattayog Farmers Pvt. Ltd., a company in the agricultural and dairy products space. The site showcases their product catalogue and company story, and acts as the primary contact point for prospective customers.",
+      "role": "Frontend Developer",
+      "year": 2024,
+      "duration": "Feb 2024 - May 2024",
+      "team": "Solo",
+      "url": "https://dattayog.com",
+      "githubUrl": null,
+      "language": null,
+      "stars": 0,
+      "topics": ["react", "tailwindcss", "frontend"],
+      "source": "resume",
+      "pushedAt": null,
+      "techStack": [
+        { "name": "ReactJS", "category": "framework" },
+        { "name": "React Router", "category": "framework" },
+        { "name": "TailwindCSS", "category": "styling" },
+        { "name": "HTML", "category": "language" },
+        { "name": "CSS", "category": "language" },
+        { "name": "JavaScript", "category": "language" }
+      ],
+      "features": [
+        "Product catalogue with category pages",
+        "Routing for multi-page navigation",
+        "Responsive layout across mobile and desktop",
+        "Contact section for inbound leads"
+      ],
+      "challenges": [
+        "First project shipping React Router for client-side navigation — had to handle deep-linking and scroll restoration",
+        "Coordinating with a non-technical stakeholder for copy and imagery"
+      ],
+      "results": [
+        "Site is live at dattayog.com and has been the company's primary web presence since launch"
+      ],
+      "accentColor": "#10b981"
+    },
+    {
+      "id": "anudeep",
+      "name": "Portfolio Website for AnuDeep Industries",
+      "tagline": "Service-portfolio site for an agriculture services firm.",
+      "description": "Built a portfolio website for AnuDeep Industries, an Ichalkaranji-based company specializing in agriculture services. The site serves as a platform to showcase their extensive range of services.",
+      "role": "Full Stack Developer",
+      "year": 2023,
+      "duration": "Jun 2023 - Oct 2023",
+      "team": "Solo",
+      "url": "https://anudeepindustries.onrender.com/",
+      "githubUrl": null,
+      "language": null,
+      "stars": 0,
+      "topics": ["nodejs", "express", "frontend"],
+      "source": "resume",
+      "pushedAt": null,
+      "techStack": [
+        { "name": "NodeJS", "category": "runtime" },
+        { "name": "ExpressJS", "category": "framework" },
+        { "name": "HTML", "category": "language" },
+        { "name": "CSS", "category": "language" },
+        { "name": "TailwindCSS", "category": "styling" },
+        { "name": "JavaScript", "category": "language" }
+      ],
+      "features": [
+        "Service catalogue with detail pages",
+        "Server-rendered pages with Express",
+        "Deployed on Render"
+      ],
+      "challenges": [
+        "First deployment of a Node app to a PaaS — had to debug build vs runtime environment differences"
+      ],
+      "results": [
+        "Live at anudeepindustries.onrender.com",
+        "Replaced the company's previous static brochure site"
+      ],
+      "accentColor": "#f59e0b"
+    },
+    {
+      "id": "opinions",
+      "name": "Opinions - Thoughts Sharing Platform",
+      "tagline": "Full-stack MERN blogging platform with auth and CRUD.",
+      "description": "A full-stack blogging platform where users can create, edit, and delete blogs. Built with the MERN stack.",
+      "role": "Full Stack Developer",
+      "year": 2023,
+      "duration": "Self-initiated",
+      "team": "Solo",
+      "url": "http://opinions-app.yashrajshitole.in",
+      "githubUrl": null,
+      "language": null,
+      "stars": 0,
+      "topics": ["mern", "blog", "fullstack"],
+      "source": "resume",
+      "pushedAt": null,
+      "techStack": [
+        { "name": "React.js", "category": "framework" },
+        { "name": "Node.js", "category": "runtime" },
+        { "name": "Express.js", "category": "framework" },
+        { "name": "MongoDB", "category": "database" }
+      ],
+      "features": [
+        "User registration and login",
+        "Create, edit, and delete blog posts",
+        "Public feed of all posts",
+        "Per-user post history"
+      ],
+      "challenges": [
+        "Designing the MongoDB schema for nested comments and likes",
+        "Implementing JWT-based auth and route protection"
+      ],
+      "results": [
+        "Working full-stack reference app used to teach myself the MERN stack end to end"
+      ],
+      "accentColor": "#8b5cf6"
+    },
+    {
+      "id": "remotelab",
+      "name": "remotelab",
+      "tagline": "Mobile-first VS Code control surface.",
+      "description": "A mobile-first control surface for VS Code — manage terminals, tasks, git, diagnostics, and Copilot CLI sessions from a phone.",
+      "role": "Author",
+      "year": 2026,
+      "duration": "Active",
+      "team": "Solo",
+      "url": "https://github.com/yashraj-shitole/remotelab",
+      "githubUrl": "https://github.com/yashraj-shitole/remotelab",
+      "language": "TypeScript",
+      "stars": 0,
+      "topics": ["vscode", "mobile", "typescript"],
+      "source": "github",
+      "pushedAt": "2026-05-28T19:33:50Z",
+      "techStack": [
+        { "name": "TypeScript", "category": "language" },
+        { "name": "VS Code Extension API", "category": "framework" }
+      ],
+      "features": [
+        "Touch-optimized terminal interaction",
+        "Task and build runner control",
+        "Git status and operations",
+        "Diagnostics viewer"
+      ],
+      "challenges": [
+        "Mapping VS Code's desktop UX to a phone screen without losing capability",
+        "Maintaining a stable extension host connection from mobile"
+      ],
+      "results": [
+        "Active development — used as a daily driver for code review on the go"
+      ],
+      "accentColor": "#3b82f6"
+    },
+    {
+      "id": "athena",
+      "name": "Project Athena",
+      "tagline": "AI assistant with tool-calling and document intelligence.",
+      "description": "An AI assistant with tool-calling and document intelligence. Locally hosted LLM (Qwen2.5-1.5B via Ollama) for conversational Q&A over a document corpus.",
+      "role": "Author",
+      "year": 2026,
+      "duration": "Active",
+      "team": "Solo",
+      "url": "https://github.com/yashraj-shitole/project-athena",
+      "githubUrl": "https://github.com/yashraj-shitole/project-athena",
+      "language": "Python",
+      "stars": 0,
+      "topics": ["ai", "rag", "tool-calling", "ollama"],
+      "source": "github",
+      "pushedAt": "2026-07-08T10:10:23Z",
+      "techStack": [
+        { "name": "Python", "category": "language" },
+        { "name": "FastAPI", "category": "framework" },
+        { "name": "PostgreSQL", "category": "database" },
+        { "name": "Ollama / Qwen2.5", "category": "ai" }
+      ],
+      "features": [
+        "Document upload and ingestion (PDF, DOCX, CSV)",
+        "Hybrid keyword + vector retrieval",
+        "Tool-calling conversational orchestrator",
+        "Citation-aware answers"
+      ],
+      "challenges": [
+        "Keeping prompt context short for a 1.5B-param model",
+        "Implementing a tool registry that doesn't hardcode the LLM provider"
+      ],
+      "results": [
+        "End-to-end MVP runs locally; full SRS in /docs"
+      ],
+      "accentColor": "#ef4444"
+    }
+  ],
+  "education": [
+    {
+      "institution": "SunBeam Institute of Information Technology, Pune-Karad",
+      "degree": "PG Diploma",
+      "field": "Advanced Computing",
+      "start": "2024-08",
+      "end": "2025-02",
+      "stack": ["C#", "Spring Framework", "Java", "Web Technologies"]
+    },
+    {
+      "institution": "SHARAD INSTITUTE OF TECHNOLOGY COLLEGE OF ENGINEERING",
+      "degree": "Bachelor of Technology (B.Tech)",
+      "field": "Computer Science and Engineering",
+      "start": "2020",
+      "end": "2024",
+      "stack": ["Java", "Data Structures", "Operating Systems", "DBMS"]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Sunbeam Hackathon 2024 — Top 6",
+      "issuer": "SunBeam Institute of Information Technology, Pune-Karad",
+      "date": "2024-11-07",
+      "description": "One of 6 groups out of 54 to complete the challenge. Built a Java console application integrated with MySQL for movie-review management."
+    },
+    {
+      "title": "District-Level Badminton Champion",
+      "issuer": "Directorate of Sports and Youth Services, Government of Maharashtra",
+      "date": "2019-09-03",
+      "description": "Won the district-level badminton championship and represented the district at the zone level."
+    },
+    {
+      "title": "Certified Java Full Stack Professional",
+      "issuer": "Capgemini College Connect (EduBridge)",
+      "date": "2024-04",
+      "description": "Java Full Stack Development Certification with 'A' grade through Capgemini's CSR initiative and EduBridge. Java, Spring, HTML, CSS, JavaScript, and Angular."
+    }
+  ],
+  "publications": [
+    {
+      "title": "A Survey of Blockchain Technology",
+      "venue": "IJARIIE",
+      "date": "2023-12-05",
+      "description": "Comprehensive review of blockchain technology, covering distributed information, consensus processes, and cryptographic security."
+    }
+  ],
+  "contact": {
+    "github": "yashraj-shitole",
+    "linkedin": "yashraj-shitole-576442215",
+    "email": "yashraj.r.shitole@gmail.com",
+    "website": "https://yashrajshitole.in"
+  }
+}

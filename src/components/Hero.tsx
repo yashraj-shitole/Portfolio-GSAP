@@ -1,0 +1,155 @@
+import { useRef } from 'react'
+import { useGSAP } from '@gsap/react'
+import { gsap } from 'gsap'
+import { data } from '../data'
+
+const headlineWords = ['Yashraj', 'Shitole', '—', 'Software', 'Engineer']
+
+export function Hero() {
+  const container = useRef<HTMLElement>(null)
+  const floatingRef = useRef<HTMLDivElement>(null)
+
+  useGSAP(
+    () => {
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) return
+      const el = container.current
+      if (!el) return
+
+      const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
+
+      // Stagger the headline words in
+      tl.from('.hero__word', {
+        y: 32,
+        opacity: 0,
+        letterSpacing: '0.04em',
+        duration: 0.9,
+        stagger: 0.07,
+      })
+        .from('.hero__sub', { y: 12, opacity: 0, duration: 0.6 }, '-=0.4')
+        .from('.hero__meta', { y: 8, opacity: 0, duration: 0.5, stagger: 0.08 }, '-=0.4')
+        .from('.code-hint', { y: 24, opacity: 0, duration: 0.8 }, '-=0.5')
+        .from('.scroll-cue', { opacity: 0, y: 12, duration: 0.5 }, '-=0.3')
+
+      // Infinite float on decorative shapes
+      if (floatingRef.current) {
+        gsap.utils.toArray<HTMLElement>('.hero__float').forEach((node, idx) => {
+          gsap.to(node, {
+            y: '+=14',
+            duration: 2.4 + (idx % 3) * 0.4,
+            repeat: -1,
+            yoyo: true,
+            ease: 'sine.inOut',
+            delay: idx * 0.2,
+          })
+        })
+      }
+
+      // Subtle parallax on the code hint as you scroll
+      gsap.to('.code-hint', {
+        yPercent: -12,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top top',
+          end: 'bottom top',
+          scrub: true,
+        },
+      })
+    },
+    { scope: container },
+  )
+
+  return (
+    <section
+      ref={container}
+      id="hero"
+      className="section--hero relative flex items-center"
+      style={{ background: 'hsl(var(--bg-h) var(--bg-s) var(--bg-l))' }}
+    >
+      {/* Decorative floating accents */}
+      <div ref={floatingRef} aria-hidden="true" className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="hero__float absolute left-[8%] top-[24%] w-2 h-2 rounded-full" style={{ background: 'hsl(var(--accent-h) var(--accent-s) var(--accent-l))' }} />
+        <div className="hero__float absolute right-[14%] top-[18%] w-3 h-3 rounded-full" style={{ background: 'hsl(var(--accent-h) var(--accent-s) var(--accent-l) / 0.5)' }} />
+        <div className="hero__float absolute left-[20%] bottom-[22%] w-1.5 h-1.5 rounded-full" style={{ background: 'hsl(var(--ink-h) var(--ink-s) var(--ink-l) / 0.4)' }} />
+        <div className="hero__float absolute right-[8%] bottom-[18%] w-2.5 h-2.5 rounded-full" style={{ background: 'hsl(var(--ink-h) var(--ink-s) var(--ink-l) / 0.25)' }} />
+      </div>
+
+      <div className="container-x relative w-full">
+        <div className="grid-12">
+          <div className="col-span-12 lg:col-span-8">
+            <p className="label-cap mb-6 hero__meta">// portfolio / v1</p>
+            <h1 className="font-display font-medium leading-[0.98] tracking-tight text-[length:var(--type-3xl)]">
+              {headlineWords.map((w, i) => (
+                <span key={i} className="hero__word inline-block mr-[0.18em]">
+                  {w === 'Engineer' ? (
+                    <em className="text-accent" style={{ fontStyle: 'italic' }}>{w}</em>
+                  ) : (
+                    w
+                  )}
+                </span>
+              ))}
+            </h1>
+            <p className="hero__sub mt-8 max-w-xl text-[length:var(--type-md)] ink-soft">
+              {data.profile.bio}
+            </p>
+            <div className="hero__meta mt-10 flex flex-wrap gap-3">
+              {data.profile.location && (
+                <span className="label-cap pill">
+                  ◉ {data.profile.location}
+                </span>
+              )}
+              <a
+                href={`mailto:${data.profile.email}`}
+                data-cursor="// email"
+                className="label-cap pill border hairline"
+                style={{ borderColor: 'hsl(var(--rule-h) var(--rule-s) var(--rule-l))', paddingInline: '0.75rem', paddingBlock: '0.4rem' }}
+              >
+                ✉ {data.profile.email}
+              </a>
+            </div>
+          </div>
+
+          <div className="col-span-12 lg:col-span-4 lg:col-start-9 mt-12 lg:mt-0">
+            <CodeHint />
+          </div>
+        </div>
+
+        <div className="scroll-cue mt-16 lg:mt-24 flex items-center gap-3">
+          <span className="label-cap">Scroll</span>
+          <span className="block w-12 h-px" style={{ background: 'hsl(var(--ink-h) var(--ink-s) var(--ink-l) / 0.5)' }} />
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function CodeHint() {
+  return (
+    <div
+      className="code-hint glass rounded-lg p-5 font-mono text-sm leading-relaxed"
+      data-cursor="// bash"
+    >
+      <div className="flex items-center gap-1.5 pb-3 mb-3 hairline border-b">
+        <span className="w-2.5 h-2.5 rounded-full" style={{ background: 'hsl(var(--ink-soft-h) var(--ink-soft-s) var(--ink-soft-l) / 0.5)' }} />
+        <span className="w-2.5 h-2.5 rounded-full" style={{ background: 'hsl(var(--ink-soft-h) var(--ink-soft-s) var(--ink-soft-l) / 0.5)' }} />
+        <span className="w-2.5 h-2.5 rounded-full" style={{ background: 'hsl(var(--ink-soft-h) var(--ink-soft-s) var(--ink-soft-l) / 0.5)' }} />
+        <span className="label-cap ml-2">~/{data.profile.name.toLowerCase().split(' ')[0]}</span>
+      </div>
+      <pre className="whitespace-pre-wrap break-words">
+        {data.codeHint.lines.map((line, i) => (
+          <div
+            key={i}
+            style={{
+              color:
+                line.type === 'comment' ? 'hsl(var(--ink-soft-h) var(--ink-soft-s) var(--ink-soft-l))'
+                : line.type === 'command' ? 'hsl(var(--ink-h) var(--ink-s) var(--ink-l))'
+                : 'hsl(var(--accent-h) var(--accent-s) var(--accent-l))',
+            }}
+          >
+            {line.text || ' '}
+          </div>
+        ))}
+      </pre>
+    </div>
+  )
+}

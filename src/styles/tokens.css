@@ -1,0 +1,68 @@
+/* ===========================================================================
+ * Design tokens — Yashraj Shitole portfolio
+ * Per .claude/skills/frontend-design/SKILL.md (v1.1, hybrid editorial + glass)
+ * =========================================================================== */
+
+:root {
+  /* Color: HSL channels for Tailwind <alpha-value> support */
+  --bg-h: 40;        --bg-s: 20%;        --bg-l: 97%;
+  --ink-h: 220;      --ink-s: 15%;       --ink-l: 12%;
+  --ink-soft-h: 220; --ink-soft-s: 8%;   --ink-soft-l: 35%;
+  --rule-h: 220;     --rule-s: 10%;      --rule-l: 88%;
+  --accent-h: 12;    --accent-s: 80%;    --accent-l: 50%;
+
+  /* Typography */
+  --type-xs:   clamp(0.75rem, 0.72rem + 0.15vw, 0.875rem);
+  --type-sm:   clamp(0.875rem, 0.84rem + 0.18vw, 1rem);
+  --type-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --type-md:   clamp(1.125rem, 1.05rem + 0.4vw, 1.375rem);
+  --type-lg:   clamp(1.5rem, 1.35rem + 0.75vw, 2rem);
+  --type-xl:   clamp(2rem, 1.7rem + 1.5vw, 3rem);
+  --type-2xl:  clamp(2.75rem, 2.2rem + 2.75vw, 4.5rem);
+  --type-3xl:  clamp(3.5rem, 2.6rem + 4.5vw, 6.5rem);
+
+  /* Spacing */
+  --space-1: 0.25rem;  --space-2: 0.5rem;   --space-3: 0.75rem;
+  --space-4: 1rem;     --space-6: 1.5rem;   --space-8: 2rem;
+  --space-12: 3rem;    --space-16: 4rem;    --space-24: 6rem;
+  --space-32: 8rem;    --space-48: 12rem;
+
+  /* Glass */
+  --glass-bg:        hsl(var(--bg-h) var(--bg-s) var(--bg-l) / 0.55);
+  --glass-bg-strong: hsl(var(--bg-h) var(--bg-s) var(--bg-l) / 0.78);
+  --glass-border:    hsl(var(--ink-h) var(--ink-s) var(--ink-l) / 0.10);
+  --glass-shadow:    0 8px 32px hsl(var(--ink-h) var(--ink-s) var(--ink-l) / 0.08);
+  --glass-blur:      16px;
+  --glass-blur-deep: 28px;
+  --glass-saturate:  140%;
+
+  /* Motion */
+  --ease-soft:   cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-snappy: cubic-bezier(0.4, 0, 0.2, 1);
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-h: 220;      --bg-s: 15%;      --bg-l: 8%;
+    --ink-h: 40;      --ink-s: 15%;     --ink-l: 92%;
+    --ink-soft-h: 220;--ink-soft-s: 8%; --ink-soft-l: 65%;
+    --rule-h: 220;    --rule-s: 10%;    --rule-l: 22%;
+    --accent-h: 12;   --accent-s: 75%;  --accent-l: 58%;
+
+    --glass-bg:        hsl(220 15% 8% / 0.55);
+    --glass-bg-strong: hsl(220 15% 8% / 0.78);
+    --glass-border:    hsl(40 15% 92% / 0.08);
+    --glass-shadow:    0 8px 32px hsl(0 0% 0% / 0.30);
+    color-scheme: dark;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
