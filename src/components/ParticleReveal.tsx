@@ -82,11 +82,11 @@ const PHASE1_MERGE = 0.8
 const FLOAT_HOLD_MS = 500
 // How long each particle takes to fly from its waypoint to its
 // random off-viewport exit point.
-const FLY_OUT_MS = 1500
+const FLY_OUT_MS = 800
 // Spread of per-particle fly-out start times across this window
 // after the float hold ends. Larger value = longer "thinning out"
 // effect as particles leave one by one.
-const FLY_OUT_STAGGER_MS = 2000
+const FLY_OUT_STAGGER_MS = 600
 
 export function ParticleReveal({
   src,

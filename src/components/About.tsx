@@ -64,8 +64,7 @@ export function About() {
           </p>
           <p className="mt-6 text-[length:var(--type-md)] leading-relaxed ink-soft">
             I care about clean interfaces, fast pages, and code that doesn't need a hero to keep it
-            alive. When I'm not building software, I play district-level badminton and write
-            survey papers I'm only half-qualified to write.
+            alive.
           </p>
         </div>
 
@@ -83,7 +82,7 @@ export function About() {
         <div data-reveal>
           <p className="label-cap">// stats</p>
         </div>
-        <div className="mt-6 grid grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="mt-6 grid grid-cols-2 lg:grid-cols-3 gap-6">
           {data.profile.stats.map((s, i) => (
             <div key={i} data-reveal>
               <StatCounter value={s.value} suffix={s.suffix} label={s.label} />

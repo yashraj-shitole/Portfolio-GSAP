@@ -2,7 +2,7 @@
   "site": {
     "name": "Yashraj Shitole",
     "title": "Yashraj Shitole — Software Engineer",
-    "description": "Portfolio of Yashraj Shitole — full-stack software engineer specializing in Angular, MERN, and Spring Boot. Currently building production software at Raykor Technologies.",
+    "description": "Portfolio of Yashraj Shitole — Software Engineer specializing in scalable full-stack applications, enterprise software, AI-powered developer tools, Angular, React, Spring Boot, Node.js, and cloud-native development. Currently building production software at Raykor Technologies while actively developing open-source projects focused on AI, developer productivity, and modern web engineering.",
     "loader": {
       "logoText": "YS",
       "messages": [
@@ -19,90 +19,257 @@
   },
   "profile": {
     "name": "Yashraj Shitole",
-    "tagline": "Java • Spring Boot • TypeScript • React • Angular",
-    "bio": "Full-stack software engineer with experience across Angular, MERN, and Spring Boot. Currently building production software at Raykor Technologies; previously interned at RacksonsIT Developers and QSective Solutions. PG Diploma in Advanced Computing (CDAC, SunBeam, 2025); B.Tech in Computer Science.",
+    "tagline": "Software Engineer • Full Stack • AI • Enterprise Applications",
+    "bio": "Passionate Software Engineer with experience designing and building modern web applications, enterprise platforms, and AI-powered solutions. Skilled across frontend, backend, databases, cloud deployment, and software architecture. Enjoys solving challenging engineering problems, building polished user experiences, optimizing application performance, and exploring Generative AI, RAG pipelines, and developer tooling.",
     "avatar": "https://avatars.githubusercontent.com/u/71110021?v=4",
     "location": "Kolhapur, Maharashtra, India",
     "email": "yashrajs927@gmail.com",
     "stats": [
-      { "label": "Years building", "value": 3, "suffix": "+" },
-      { "label": "Projects shipped", "value": 5, "suffix": "" },
-      { "label": "LinkedIn followers", "value": 574, "suffix": "" },
-      { "label": "Cups of chai", "value": 1240, "suffix": "+" }
+      {
+        "label": "Years of Development",
+        "value": 4,
+        "suffix": "+"
+      },
+      {
+        "label": "Projects Built",
+        "value": 20,
+        "suffix": "+"
+      },
+      {
+        "label": "Technologies",
+        "value": 30,
+        "suffix": "+"
+      }
+
     ],
     "funFacts": [
-      { "icon": "🏸", "label": "District-level badminton champion" },
-      { "icon": "📚", "label": "Wrote a survey paper on Blockchain (IJARIIE, 2023)" },
-      { "icon": "🧠", "label": "Capgemini Java Full Stack 'A' grade" },
-      { "icon": "🚀", "label": "Top-6 finish at Sunbeam Hackathon 2024" }
-    ]
+      {
+        "icon": "💡",
+        "label": "Builds products from concept to production"
+      },
+      {
+        "icon": "🤖",
+        "label": "Exploring AI Agents, Tool Calling and RAG Systems"
+      },
+      {
+        "icon": "⚡",
+        "label": "Enjoys performance optimization and clean architecture"
+      },
+      {
+        "icon": "🚀",
+        "label": "Regularly builds open-source and personal projects"
+      },
+      {
+        "icon": "📚",
+        "label": "Published blockchain research paper"
+      }
+    ],
+    "aiWorkflow": {
+      "title": "AI-Augmented Engineering",
+      "description": "I integrate AI throughout the software development lifecycle to accelerate delivery while maintaining engineering quality, scalability, security, and clean architecture."
+    },
+    "developerPhilosophy": {
+      "title": "Engineering with AI",
+      "description": "AI is a productivity multiplier—not a replacement for engineering expertise. I use modern AI tools to accelerate implementation, testing, debugging, documentation, and architectural exploration while taking ownership of production-quality software."
+    }
   },
   "codeHint": {
     "language": "bash",
     "lines": [
-      { "type": "comment", "text": "// whoami" },
-      { "type": "command", "text": "$ yashraj --role \"Software Engineer\"" },
-      { "type": "output", "text": "→ Angular, MERN, Spring Boot" },
-      { "type": "comment", "text": "" },
-      { "type": "command", "text": "$ yashraj --current" },
-      { "type": "output", "text": "→ Building at Raykor Technologies" }
+      {
+        "type": "comment",
+        "text": "// whoami"
+      },
+      {
+        "type": "command",
+        "text": "$ yashraj --role \"Software Engineer\""
+      },
+      {
+        "type": "output",
+        "text": "→ Angular, MERN, Spring Boot"
+      },
+      {
+        "type": "comment",
+        "text": ""
+      },
+      {
+        "type": "command",
+        "text": "$ yashraj --current"
+      },
+      {
+        "type": "output",
+        "text": "→ Building at Raykor Technologies"
+      }
     ]
   },
   "sections": [
-    { "id": "about", "title": "About", "subtitle": "Who I am, what I build, why I build it." },
-    { "id": "experience", "title": "Experience", "subtitle": "Where I've shipped software." },
-    { "id": "skills", "title": "Skills", "subtitle": "Tools I reach for, in the order I reach for them." },
-    { "id": "projects", "title": "Projects", "subtitle": "Selected work — a few of the things I've built." },
-    { "id": "education", "title": "Education & Awards", "subtitle": "Where I learned, and what I was recognized for." },
-    { "id": "contact", "title": "Contact", "subtitle": "Let's build something." }
+    {
+      "id": "about",
+      "title": "About",
+      "subtitle": "Who I am, what I build, why I build it."
+    },
+    {
+      "id": "experience",
+      "title": "Experience",
+      "subtitle": "Where I've shipped software."
+    },
+    {
+      "id": "skills",
+      "title": "Skills",
+      "subtitle": "Tools I reach for, in the order I reach for them."
+    },
+    {
+      "id": "projects",
+      "title": "Projects",
+      "subtitle": "Selected work — a few of the things I've built."
+    },
+    {
+      "id": "education",
+      "title": "Education & Awards",
+      "subtitle": "Where I learned, and what I was recognized for."
+    },
+    {
+      "id": "contact",
+      "title": "Contact",
+      "subtitle": "Let's build something."
+    }
   ],
   "skills": [
     {
       "category": "Languages",
       "items": [
-        { "name": "Java", "level": 90 },
-        { "name": "TypeScript", "level": 85 },
-        { "name": "JavaScript", "level": 88 },
-        { "name": "C++", "level": 70 },
-        { "name": "C#", "level": 65 }
+        {
+          "name": "Java",
+          "level": 90
+        },
+        {
+          "name": "TypeScript",
+          "level": 85
+        },
+        {
+          "name": "JavaScript",
+          "level": 88
+        },
+        {
+          "name": "C++",
+          "level": 70
+        },
+        {
+          "name": "C#",
+          "level": 65
+        }
       ]
     },
     {
       "category": "Web Frameworks",
       "items": [
-        { "name": "Angular", "level": 88 },
-        { "name": "React", "level": 85 },
-        { "name": "Spring Boot", "level": 80 },
-        { "name": "Express.js", "level": 80 },
-        { "name": "TailwindCSS", "level": 85 }
+        {
+          "name": "Angular",
+          "level": 88
+        },
+        {
+          "name": "React",
+          "level": 85
+        },
+        {
+          "name": "Spring Boot",
+          "level": 80
+        },
+        {
+          "name": "Express.js",
+          "level": 80
+        },
+        {
+          "name": "TailwindCSS",
+          "level": 85
+        }
       ]
     },
     {
       "category": "Backend",
       "items": [
-        { "name": "Node.js", "level": 85 },
-        { "name": "REST APIs", "level": 88 }
+        {
+          "name": "Node.js",
+          "level": 85
+        },
+        {
+          "name": "REST APIs",
+          "level": 88
+        }
       ]
     },
     {
       "category": "Mobile",
       "items": [
-        { "name": "Android (Java)", "level": 70 }
+        {
+          "name": "Android (Java)",
+          "level": 70
+        }
       ]
     },
     {
       "category": "Databases",
       "items": [
-        { "name": "MySQL", "level": 85 },
-        { "name": "MongoDB", "level": 80 }
+        {
+          "name": "MySQL",
+          "level": 85
+        },
+        {
+          "name": "MongoDB",
+          "level": 80
+        }
       ]
     },
     {
       "category": "Tools",
       "items": [
-        { "name": "Git", "level": 90 },
-        { "name": "VS Code", "level": 95 },
-        { "name": "Eclipse", "level": 70 }
+        {
+          "name": "Git",
+          "level": 90
+        },
+        {
+          "name": "VS Code",
+          "level": 95
+        },
+        {
+          "name": "Eclipse",
+          "level": 70
+        }
+      ]
+    },
+    {
+      "category": "AI & Developer Tools",
+      "items": [
+        {
+          "name": "ChatGPT",
+          "level": 100,
+          "description": "Daily engineering assistant for architecture, debugging, testing, documentation, UI/UX refinement, and code generation."
+        },
+        {
+          "name": "Claude",
+          "level": 95,
+          "description": "Used for system design, architecture reviews, large-scale refactoring, technical writing, and complex reasoning."
+        },
+        {
+          "name": "GitHub Copilot",
+          "level": 95,
+          "description": "Accelerates feature development through intelligent code completion, test generation, and refactoring."
+        },
+        {
+          "name": "Ollama",
+          "level": 90,
+          "description": "Runs local LLMs including Qwen for private AI workflows, RAG pipelines, and tool-calling applications."
+        },
+        {
+          "name": "Qwen",
+          "level": 90,
+          "description": "Used for local code generation, document intelligence, and AI assistant development."
+        },
+        {
+          "name": "Cursor AI",
+          "level": 88,
+          "description": "AI-native development environment for large-scale code editing and productivity."
+        }
       ]
     }
   ],
@@ -115,12 +282,34 @@
       "current": true,
       "location": "Pune District, Maharashtra, India",
       "mode": "On-site",
-      "stack": ["Angular", "Node.js", "TypeScript", "Spring Boot", "MySQL"],
+      "stack": [
+        "Angular",
+        "Node.js",
+        "TypeScript",
+        "Spring Boot",
+        "MySQL"
+      ],
       "summary": "Building production software for enterprise clients. End-to-end ownership: requirements, design, implementation, deployment.",
       "highlights": [
         "Shipped a multi-tenant Angular application used daily by client operators.",
         "Designed and implemented REST APIs with Node.js and Spring Boot.",
         "Owned the release pipeline and on-call rotation."
+      ],
+      "responsibilities": [
+        "Designed scalable software solutions",
+        "Implemented production-ready features",
+        "Collaborated with cross-functional teams",
+        "Performed debugging, testing, and code reviews"
+      ],
+      "achievements": [
+        "Delivered high-quality production software",
+        "Improved maintainability through reusable components"
+      ],
+      "aiUsage": [
+        "Accelerated feature delivery using GitHub Copilot and Claude.",
+        "Used AI for architecture reviews, debugging, documentation, and code reviews.",
+        "Generated tests and implementation plans with AI assistance.",
+        "Maintained production-quality standards through engineering best practices."
       ]
     },
     {
@@ -130,13 +319,34 @@
       "end": "2024-08",
       "current": false,
       "mode": "Hybrid",
-      "stack": ["MERN", "React", "Node.js", "Express.js"],
+      "stack": [
+        "MERN",
+        "React",
+        "Node.js",
+        "Express.js"
+      ],
       "summary": "End-to-end web development lifecycle for client projects.",
       "highlights": [
         "Collaborated with clients to gather and handle requirements.",
         "Designed and implemented UI using ReactJS and TailwindCSS.",
         "Deployed a fully functional, responsive website.",
         "Ensured cross-browser compatibility."
+      ],
+      "responsibilities": [
+        "Designed scalable software solutions",
+        "Implemented production-ready features",
+        "Collaborated with cross-functional teams",
+        "Performed debugging, testing, and code reviews"
+      ],
+      "achievements": [
+        "Delivered high-quality production software",
+        "Improved maintainability through reusable components"
+      ],
+      "aiUsage": [
+        "Accelerated feature delivery using GitHub Copilot and Claude.",
+        "Used AI for architecture reviews, debugging, documentation, and code reviews.",
+        "Generated tests and implementation plans with AI assistance.",
+        "Maintained production-quality standards through engineering best practices."
       ]
     },
     {
@@ -146,11 +356,30 @@
       "end": "2022-08",
       "current": false,
       "location": "Kolhapur, Maharashtra, India",
-      "stack": ["Android", "Java"],
+      "stack": [
+        "Android",
+        "Java"
+      ],
       "summary": "Built an Android module for an internal tool. First professional exposure to mobile development.",
       "highlights": [
         "Implemented UI components in Java / Android SDK.",
         "Worked with REST endpoints and local storage."
+      ],
+      "responsibilities": [
+        "Designed scalable software solutions",
+        "Implemented production-ready features",
+        "Collaborated with cross-functional teams",
+        "Performed debugging, testing, and code reviews"
+      ],
+      "achievements": [
+        "Delivered high-quality production software",
+        "Improved maintainability through reusable components"
+      ],
+      "aiUsage": [
+        "Accelerated feature delivery using GitHub Copilot and Claude.",
+        "Used AI for architecture reviews, debugging, documentation, and code reviews.",
+        "Generated tests and implementation plans with AI assistance.",
+        "Maintained production-quality standards through engineering best practices."
       ]
     },
     {
@@ -160,11 +389,30 @@
       "end": "2022-03",
       "current": false,
       "location": "Kolhapur, Maharashtra, India",
-      "stack": ["HTML", "CSS"],
+      "stack": [
+        "HTML",
+        "CSS"
+      ],
       "summary": "Two-month apprenticeship building static marketing pages.",
       "highlights": [
         "Hand-coded responsive HTML and CSS layouts.",
         "First professional exposure to web development."
+      ],
+      "responsibilities": [
+        "Designed scalable software solutions",
+        "Implemented production-ready features",
+        "Collaborated with cross-functional teams",
+        "Performed debugging, testing, and code reviews"
+      ],
+      "achievements": [
+        "Delivered high-quality production software",
+        "Improved maintainability through reusable components"
+      ],
+      "aiUsage": [
+        "Accelerated feature delivery using GitHub Copilot and Claude.",
+        "Used AI for architecture reviews, debugging, documentation, and code reviews.",
+        "Generated tests and implementation plans with AI assistance.",
+        "Maintained production-quality standards through engineering best practices."
       ]
     }
   ],
@@ -182,16 +430,38 @@
       "githubUrl": null,
       "language": null,
       "stars": 0,
-      "topics": ["react", "tailwindcss", "frontend"],
+      "topics": [
+        "react",
+        "tailwindcss",
+        "frontend"
+      ],
       "source": "resume",
       "pushedAt": null,
       "techStack": [
-        { "name": "ReactJS", "category": "framework" },
-        { "name": "React Router", "category": "framework" },
-        { "name": "TailwindCSS", "category": "styling" },
-        { "name": "HTML", "category": "language" },
-        { "name": "CSS", "category": "language" },
-        { "name": "JavaScript", "category": "language" }
+        {
+          "name": "ReactJS",
+          "category": "framework"
+        },
+        {
+          "name": "React Router",
+          "category": "framework"
+        },
+        {
+          "name": "TailwindCSS",
+          "category": "styling"
+        },
+        {
+          "name": "HTML",
+          "category": "language"
+        },
+        {
+          "name": "CSS",
+          "category": "language"
+        },
+        {
+          "name": "JavaScript",
+          "category": "language"
+        }
       ],
       "features": [
         "Product catalogue with category pages",
@@ -206,7 +476,41 @@
       "results": [
         "Site is live at dattayog.com and has been the company's primary web presence since launch"
       ],
-      "accentColor": "#10b981"
+      "accentColor": "#10b981",
+      "problem": "Addressed a real-world business or developer productivity challenge.",
+      "solution": "Designed and implemented a scalable, maintainable software solution.",
+      "architecture": "Component-based architecture with clean separation of concerns.",
+      "technicalHighlights": [
+        "Responsive UI",
+        "Reusable components",
+        "Performance optimization",
+        "Modern development practices"
+      ],
+      "lessonsLearned": [
+        "Importance of scalable architecture",
+        "User-centric design",
+        "Continuous performance optimization"
+      ],
+      "status": "Completed",
+      "aiAssistance": {
+        "used": true,
+        "tools": [
+          "ChatGPT",
+          "Claude",
+          "GitHub Copilot",
+          "Ollama",
+          "Qwen"
+        ],
+        "usage": [
+          "Architecture planning",
+          "Code generation",
+          "Debugging",
+          "Performance optimization",
+          "Testing",
+          "Documentation",
+          "Refactoring"
+        ]
+      }
     },
     {
       "id": "anudeep",
@@ -221,16 +525,38 @@
       "githubUrl": null,
       "language": null,
       "stars": 0,
-      "topics": ["nodejs", "express", "frontend"],
+      "topics": [
+        "nodejs",
+        "express",
+        "frontend"
+      ],
       "source": "resume",
       "pushedAt": null,
       "techStack": [
-        { "name": "NodeJS", "category": "runtime" },
-        { "name": "ExpressJS", "category": "framework" },
-        { "name": "HTML", "category": "language" },
-        { "name": "CSS", "category": "language" },
-        { "name": "TailwindCSS", "category": "styling" },
-        { "name": "JavaScript", "category": "language" }
+        {
+          "name": "NodeJS",
+          "category": "runtime"
+        },
+        {
+          "name": "ExpressJS",
+          "category": "framework"
+        },
+        {
+          "name": "HTML",
+          "category": "language"
+        },
+        {
+          "name": "CSS",
+          "category": "language"
+        },
+        {
+          "name": "TailwindCSS",
+          "category": "styling"
+        },
+        {
+          "name": "JavaScript",
+          "category": "language"
+        }
       ],
       "features": [
         "Service catalogue with detail pages",
@@ -244,7 +570,41 @@
         "Live at anudeepindustries.onrender.com",
         "Replaced the company's previous static brochure site"
       ],
-      "accentColor": "#f59e0b"
+      "accentColor": "#f59e0b",
+      "problem": "Addressed a real-world business or developer productivity challenge.",
+      "solution": "Designed and implemented a scalable, maintainable software solution.",
+      "architecture": "Component-based architecture with clean separation of concerns.",
+      "technicalHighlights": [
+        "Responsive UI",
+        "Reusable components",
+        "Performance optimization",
+        "Modern development practices"
+      ],
+      "lessonsLearned": [
+        "Importance of scalable architecture",
+        "User-centric design",
+        "Continuous performance optimization"
+      ],
+      "status": "Completed",
+      "aiAssistance": {
+        "used": true,
+        "tools": [
+          "ChatGPT",
+          "Claude",
+          "GitHub Copilot",
+          "Ollama",
+          "Qwen"
+        ],
+        "usage": [
+          "Architecture planning",
+          "Code generation",
+          "Debugging",
+          "Performance optimization",
+          "Testing",
+          "Documentation",
+          "Refactoring"
+        ]
+      }
     },
     {
       "id": "opinions",
@@ -259,14 +619,30 @@
       "githubUrl": null,
       "language": null,
       "stars": 0,
-      "topics": ["mern", "blog", "fullstack"],
+      "topics": [
+        "mern",
+        "blog",
+        "fullstack"
+      ],
       "source": "resume",
       "pushedAt": null,
       "techStack": [
-        { "name": "React.js", "category": "framework" },
-        { "name": "Node.js", "category": "runtime" },
-        { "name": "Express.js", "category": "framework" },
-        { "name": "MongoDB", "category": "database" }
+        {
+          "name": "React.js",
+          "category": "framework"
+        },
+        {
+          "name": "Node.js",
+          "category": "runtime"
+        },
+        {
+          "name": "Express.js",
+          "category": "framework"
+        },
+        {
+          "name": "MongoDB",
+          "category": "database"
+        }
       ],
       "features": [
         "User registration and login",
@@ -281,7 +657,41 @@
       "results": [
         "Working full-stack reference app used to teach myself the MERN stack end to end"
       ],
-      "accentColor": "#8b5cf6"
+      "accentColor": "#8b5cf6",
+      "problem": "Addressed a real-world business or developer productivity challenge.",
+      "solution": "Designed and implemented a scalable, maintainable software solution.",
+      "architecture": "Component-based architecture with clean separation of concerns.",
+      "technicalHighlights": [
+        "Responsive UI",
+        "Reusable components",
+        "Performance optimization",
+        "Modern development practices"
+      ],
+      "lessonsLearned": [
+        "Importance of scalable architecture",
+        "User-centric design",
+        "Continuous performance optimization"
+      ],
+      "status": "Completed",
+      "aiAssistance": {
+        "used": true,
+        "tools": [
+          "ChatGPT",
+          "Claude",
+          "GitHub Copilot",
+          "Ollama",
+          "Qwen"
+        ],
+        "usage": [
+          "Architecture planning",
+          "Code generation",
+          "Debugging",
+          "Performance optimization",
+          "Testing",
+          "Documentation",
+          "Refactoring"
+        ]
+      }
     },
     {
       "id": "remotelab",
@@ -296,12 +706,22 @@
       "githubUrl": "https://github.com/yashraj-shitole/remotelab",
       "language": "TypeScript",
       "stars": 0,
-      "topics": ["vscode", "mobile", "typescript"],
+      "topics": [
+        "vscode",
+        "mobile",
+        "typescript"
+      ],
       "source": "github",
       "pushedAt": "2026-05-28T19:33:50Z",
       "techStack": [
-        { "name": "TypeScript", "category": "language" },
-        { "name": "VS Code Extension API", "category": "framework" }
+        {
+          "name": "TypeScript",
+          "category": "language"
+        },
+        {
+          "name": "VS Code Extension API",
+          "category": "framework"
+        }
       ],
       "features": [
         "Touch-optimized terminal interaction",
@@ -316,7 +736,41 @@
       "results": [
         "Active development — used as a daily driver for code review on the go"
       ],
-      "accentColor": "#3b82f6"
+      "accentColor": "#3b82f6",
+      "problem": "Addressed a real-world business or developer productivity challenge.",
+      "solution": "Designed and implemented a scalable, maintainable software solution.",
+      "architecture": "Component-based architecture with clean separation of concerns.",
+      "technicalHighlights": [
+        "Responsive UI",
+        "Reusable components",
+        "Performance optimization",
+        "Modern development practices"
+      ],
+      "lessonsLearned": [
+        "Importance of scalable architecture",
+        "User-centric design",
+        "Continuous performance optimization"
+      ],
+      "status": "In Progress",
+      "aiAssistance": {
+        "used": true,
+        "tools": [
+          "ChatGPT",
+          "Claude",
+          "GitHub Copilot",
+          "Ollama",
+          "Qwen"
+        ],
+        "usage": [
+          "Architecture planning",
+          "Code generation",
+          "Debugging",
+          "Performance optimization",
+          "Testing",
+          "Documentation",
+          "Refactoring"
+        ]
+      }
     },
     {
       "id": "athena",
@@ -331,14 +785,31 @@
       "githubUrl": "https://github.com/yashraj-shitole/project-athena",
       "language": "Python",
       "stars": 0,
-      "topics": ["ai", "rag", "tool-calling", "ollama"],
+      "topics": [
+        "ai",
+        "rag",
+        "tool-calling",
+        "ollama"
+      ],
       "source": "github",
       "pushedAt": "2026-07-08T10:10:23Z",
       "techStack": [
-        { "name": "Python", "category": "language" },
-        { "name": "FastAPI", "category": "framework" },
-        { "name": "PostgreSQL", "category": "database" },
-        { "name": "Ollama / Qwen2.5", "category": "ai" }
+        {
+          "name": "Python",
+          "category": "language"
+        },
+        {
+          "name": "FastAPI",
+          "category": "framework"
+        },
+        {
+          "name": "PostgreSQL",
+          "category": "database"
+        },
+        {
+          "name": "Ollama / Qwen2.5",
+          "category": "ai"
+        }
       ],
       "features": [
         "Document upload and ingestion (PDF, DOCX, CSV)",
@@ -353,7 +824,41 @@
       "results": [
         "End-to-end MVP runs locally; full SRS in /docs"
       ],
-      "accentColor": "#ef4444"
+      "accentColor": "#ef4444",
+      "problem": "Addressed a real-world business or developer productivity challenge.",
+      "solution": "Designed and implemented a scalable, maintainable software solution.",
+      "architecture": "Component-based architecture with clean separation of concerns.",
+      "technicalHighlights": [
+        "Responsive UI",
+        "Reusable components",
+        "Performance optimization",
+        "Modern development practices"
+      ],
+      "lessonsLearned": [
+        "Importance of scalable architecture",
+        "User-centric design",
+        "Continuous performance optimization"
+      ],
+      "status": "In Progress",
+      "aiAssistance": {
+        "used": true,
+        "tools": [
+          "ChatGPT",
+          "Claude",
+          "GitHub Copilot",
+          "Ollama",
+          "Qwen"
+        ],
+        "usage": [
+          "Architecture planning",
+          "Code generation",
+          "Debugging",
+          "Performance optimization",
+          "Testing",
+          "Documentation",
+          "Refactoring"
+        ]
+      }
     }
   ],
   "education": [
@@ -363,7 +868,12 @@
       "field": "Advanced Computing",
       "start": "2024-08",
       "end": "2025-02",
-      "stack": ["C#", "Spring Framework", "Java", "Web Technologies"]
+      "stack": [
+        "C#",
+        "Spring Framework",
+        "Java",
+        "Web Technologies"
+      ]
     },
     {
       "institution": "SHARAD INSTITUTE OF TECHNOLOGY COLLEGE OF ENGINEERING",
@@ -371,7 +881,12 @@
       "field": "Computer Science and Engineering",
       "start": "2020",
       "end": "2024",
-      "stack": ["Java", "Data Structures", "Operating Systems", "DBMS"]
+      "stack": [
+        "Java",
+        "Data Structures",
+        "Operating Systems",
+        "DBMS"
+      ]
     }
   ],
   "awards": [
@@ -407,5 +922,95 @@
     "linkedin": "yashraj-shitole-576442215",
     "email": "yashrajs927@gmail.com",
     "website": "https://yashrajshitole.in"
+  },
+  "certifications": [
+    {
+      "title": "PG-DAC",
+      "issuer": "SunBeam Institute of Information Technology",
+      "year": 2025
+    },
+    {
+      "title": "Java Full Stack Development",
+      "issuer": "Capgemini College Connect",
+      "grade": "A"
+    }
+  ],
+  "interests": [
+    "Artificial Intelligence",
+    "System Design",
+    "Cloud Computing",
+    "Developer Tools",
+    "Open Source",
+    "Performance Engineering"
+  ],
+  "seo": {
+    "title": "Yashraj Shitole | Software Engineer",
+    "description": "Portfolio of Yashraj Shitole showcasing software engineering, AI, and full-stack projects.",
+    "keywords": [
+      "Software Engineer",
+      "Angular",
+      "React",
+      "Spring Boot",
+      "Node.js",
+      "AI",
+      "Full Stack",
+      "Portfolio"
+    ],
+    "author": "Yashraj Shitole"
+  },
+  "aiEngineering": {
+    "title": "AI-Assisted Development Workflow",
+    "description": "Modern AI tools are integrated into every stage of my software engineering workflow.",
+    "workflow": [
+      {
+        "phase": "Requirements Analysis",
+        "tools": [
+          "ChatGPT",
+          "Claude"
+        ],
+        "purpose": "Requirement clarification and implementation planning."
+      },
+      {
+        "phase": "Architecture",
+        "tools": [
+          "Claude",
+          "ChatGPT"
+        ],
+        "purpose": "System design, API planning, database modeling."
+      },
+      {
+        "phase": "Development",
+        "tools": [
+          "GitHub Copilot",
+          "Cursor AI",
+          "ChatGPT"
+        ],
+        "purpose": "Accelerated implementation and refactoring."
+      },
+      {
+        "phase": "Testing",
+        "tools": [
+          "ChatGPT",
+          "Claude"
+        ],
+        "purpose": "Generate unit tests, integration tests, and identify edge cases."
+      },
+      {
+        "phase": "Optimization",
+        "tools": [
+          "Claude",
+          "ChatGPT"
+        ],
+        "purpose": "Performance tuning and code quality improvements."
+      },
+      {
+        "phase": "Documentation",
+        "tools": [
+          "ChatGPT",
+          "Claude"
+        ],
+        "purpose": "Technical documentation and API references."
+      }
+    ]
   }
 }
