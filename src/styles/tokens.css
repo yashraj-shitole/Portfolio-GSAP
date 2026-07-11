@@ -1,16 +1,21 @@
 /* ===========================================================================
  * Design tokens — Yashraj Shitole portfolio
  * Per .claude/skills/frontend-design/SKILL.md (v1.1, hybrid editorial + glass)
+ * ===========================================================================
+ *
+ * Theming:
+ *   - `data-theme="light"` (default): warm off-white background, deep ink.
+ *   - `data-theme="dark"`:           cool near-black background, warm ink.
+ *   - No `data-theme` attribute:     falls back to the OS preference
+ *                                    via `prefers-color-scheme`. The init
+ *                                    script in index.html sets
+ *                                    `data-theme` before paint, so this
+ *                                    branch only matters during the first
+ *                                    synchronous render.
+ *   - The toggle in the header writes `data-theme` to <html> on change.
  * =========================================================================== */
 
 :root {
-  /* Color: HSL channels for Tailwind <alpha-value> support */
-  --bg-h: 40;        --bg-s: 20%;        --bg-l: 97%;
-  --ink-h: 220;      --ink-s: 15%;       --ink-l: 12%;
-  --ink-soft-h: 220; --ink-soft-s: 8%;   --ink-soft-l: 35%;
-  --rule-h: 220;     --rule-s: 10%;      --rule-l: 88%;
-  --accent-h: 12;    --accent-s: 80%;    --accent-l: 50%;
-
   /* Typography */
   --type-xs:   clamp(0.75rem, 0.72rem + 0.15vw, 0.875rem);
   --type-sm:   clamp(0.875rem, 0.84rem + 0.18vw, 1rem);
@@ -27,7 +32,7 @@
   --space-12: 3rem;    --space-16: 4rem;    --space-24: 6rem;
   --space-32: 8rem;    --space-48: 12rem;
 
-  /* Glass */
+  /* Glass (uses the color tokens below) */
   --glass-bg:        hsl(var(--bg-h) var(--bg-s) var(--bg-l) / 0.55);
   --glass-bg-strong: hsl(var(--bg-h) var(--bg-s) var(--bg-l) / 0.78);
   --glass-border:    hsl(var(--ink-h) var(--ink-s) var(--ink-l) / 0.10);
@@ -39,22 +44,44 @@
   /* Motion */
   --ease-soft:   cubic-bezier(0.22, 1, 0.36, 1);
   --ease-snappy: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Light theme — explicit. Also matches :root with no data-theme set on
+   systems that prefer light. */
+:root,
+:root[data-theme="light"] {
+  --bg-h: 40;        --bg-s: 20%;        --bg-l: 97%;
+  --ink-h: 220;      --ink-s: 15%;       --ink-l: 12%;
+  --ink-soft-h: 220; --ink-soft-s: 8%;   --ink-soft-l: 35%;
+  --rule-h: 220;     --rule-s: 10%;      --rule-l: 88%;
+  --accent-h: 12;    --accent-s: 80%;    --accent-l: 50%;
 
   color-scheme: light;
 }
 
+/* Dark theme — explicit. */
+:root[data-theme="dark"] {
+  --bg-h: 220;      --bg-s: 15%;      --bg-l: 8%;
+  --ink-h: 40;      --ink-s: 15%;     --ink-l: 92%;
+  --ink-soft-h: 220;--ink-soft-s: 8%; --ink-soft-l: 65%;
+  --rule-h: 220;    --rule-s: 10%;    --rule-l: 22%;
+  --accent-h: 12;   --accent-s: 75%;  --accent-l: 58%;
+
+  color-scheme: dark;
+}
+
+/* OS preference fallback — only when the user hasn't made an explicit
+   choice. `:not([data-theme])` is the case where the inline init script
+   in index.html hasn't run yet (it runs synchronously, so this is
+   effectively a no-op in practice — kept for safety). */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --bg-h: 220;      --bg-s: 15%;      --bg-l: 8%;
     --ink-h: 40;      --ink-s: 15%;     --ink-l: 92%;
     --ink-soft-h: 220;--ink-soft-s: 8%; --ink-soft-l: 65%;
     --rule-h: 220;    --rule-s: 10%;    --rule-l: 22%;
     --accent-h: 12;   --accent-s: 75%;  --accent-l: 58%;
 
-    --glass-bg:        hsl(220 15% 8% / 0.55);
-    --glass-bg-strong: hsl(220 15% 8% / 0.78);
-    --glass-border:    hsl(40 15% 92% / 0.08);
-    --glass-shadow:    0 8px 32px hsl(0 0% 0% / 0.30);
     color-scheme: dark;
   }
 }
