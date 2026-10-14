@@ -60,7 +60,7 @@ export function About() {
             production software at <span className="text-accent font-medium">Raykor Technologies</span>.
             My path started with a curiosity about how websites work — that grew into a B.Tech in
             Computer Science, a CDAC PG Diploma in Advanced Computing, and three years of shipping
-            features in Angular, MERN, and Spring Boot.
+            features in Angular, Node.js, Express, and PostgreSQL.
           </p>
           <p className="mt-6 text-[length:var(--type-md)] leading-relaxed ink-soft">
             I care about clean interfaces, fast pages, and code that doesn't need a hero to keep it

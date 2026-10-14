@@ -2,7 +2,7 @@
   "site": {
     "name": "Yashraj Shitole",
     "title": "Yashraj Shitole — Software Engineer",
-    "description": "Portfolio of Yashraj Shitole — Software Engineer specializing in scalable full-stack applications, enterprise software, AI-powered developer tools, Angular, React, Spring Boot, Node.js, and cloud-native development. Currently building production software at Raykor Technologies while actively developing open-source projects focused on AI, developer productivity, and modern web engineering.",
+    "description": "Portfolio of Yashraj Shitole — Software Engineer specializing in scalable full-stack applications, enterprise software, AI-powered developer tools, Angular, React, Node.js, Express, PostgreSQL, OrientDB, and cloud-native development. Currently building production software at Raykor Technologies while actively developing open-source projects focused on AI, developer productivity, and modern web engineering.",
     "loader": {
       "logoText": "YS",
       "messages": [
@@ -40,7 +40,6 @@
         "value": 30,
         "suffix": "+"
       }
-
     ],
     "funFacts": [
       {
@@ -86,7 +85,7 @@
       },
       {
         "type": "output",
-        "text": "→ Angular, MERN, Spring Boot"
+        "text": "→ Angular, Node.js, Express, PostgreSQL, OrientDB"
       },
       {
         "type": "comment",
@@ -151,6 +150,10 @@
           "level": 88
         },
         {
+          "name": "Kotlin",
+          "level": 78
+        },
+        {
           "name": "C++",
           "level": 70
         },
@@ -170,10 +173,6 @@
         {
           "name": "React",
           "level": 85
-        },
-        {
-          "name": "Spring Boot",
-          "level": 80
         },
         {
           "name": "Express.js",
@@ -202,7 +201,28 @@
       "category": "Mobile",
       "items": [
         {
+          "name": "Android (Kotlin, Jetpack Compose)",
+          "level": 78
+        },
+        {
           "name": "Android (Java)",
+          "level": 70
+        }
+      ]
+    },
+    {
+      "category": "Realtime & Desktop",
+      "items": [
+        {
+          "name": "WebRTC",
+          "level": 70
+        },
+        {
+          "name": "Electron",
+          "level": 72
+        },
+        {
+          "name": "Bluetooth HID",
           "level": 70
         }
       ]
@@ -210,6 +230,14 @@
     {
       "category": "Databases",
       "items": [
+        {
+          "name": "PostgreSQL",
+          "level": 85
+        },
+        {
+          "name": "OrientDB",
+          "level": 75
+        },
         {
           "name": "MySQL",
           "level": 85
@@ -285,14 +313,15 @@
       "stack": [
         "Angular",
         "Node.js",
+        "Express.js",
         "TypeScript",
-        "Spring Boot",
-        "MySQL"
+        "PostgreSQL",
+        "OrientDB"
       ],
       "summary": "Building production software for enterprise clients. End-to-end ownership: requirements, design, implementation, deployment.",
       "highlights": [
         "Shipped a multi-tenant Angular application used daily by client operators.",
-        "Designed and implemented REST APIs with Node.js and Spring Boot.",
+        "Designed and implemented REST APIs with Node.js and Express.js backed by PostgreSQL and OrientDB.",
         "Owned the release pipeline and on-call rotation."
       ],
       "responsibilities": [
@@ -320,10 +349,10 @@
       "current": false,
       "mode": "Hybrid",
       "stack": [
-        "MERN",
         "React",
         "Node.js",
-        "Express.js"
+        "Express.js",
+        "TailwindCSS"
       ],
       "summary": "End-to-end web development lifecycle for client projects.",
       "highlights": [
@@ -417,6 +446,186 @@
     }
   ],
   "projects": [
+    {
+      "id": "glidr-screen",
+      "name": "Glidr Screen",
+      "tagline": "See your Windows PC on your phone and control it from anywhere.",
+      "description": "Peer-to-peer remote desktop for Windows and Android. An Electron tray app captures the PC and streams it over WebRTC at 24 fps with hardware H.264; the Kotlin / Compose phone app shows it with a trackpad, keyboard and shortcuts. No media server and no relay: pairing is by QR code and the rendezvous only ever carries sealed messages.",
+      "role": "Author",
+      "year": 2026,
+      "duration": "Shipped",
+      "team": "Solo",
+      "url": null,
+      "githubUrl": "https://github.com/yashraj-shitole/GlidrScreen",
+      "language": "Kotlin",
+      "stars": 0,
+      "topics": [
+        "webrtc",
+        "electron",
+        "kotlin",
+        "jetpack-compose",
+        "remote-desktop"
+      ],
+      "source": "github",
+      "pushedAt": "2026-10-14T22:21:12Z",
+      "featured": true,
+      "techStack": [
+        {
+          "name": "Kotlin",
+          "category": "language"
+        },
+        {
+          "name": "Jetpack Compose",
+          "category": "framework"
+        },
+        {
+          "name": "WebRTC",
+          "category": "framework"
+        },
+        {
+          "name": "Electron",
+          "category": "framework"
+        },
+        {
+          "name": "Node.js",
+          "category": "runtime"
+        },
+        {
+          "name": "AES-256-GCM",
+          "category": "security"
+        }
+      ],
+      "metrics": [
+        {
+          "label": "frame rate",
+          "value": "24 fps"
+        },
+        {
+          "label": "media servers",
+          "value": "0"
+        },
+        {
+          "label": "signaling",
+          "value": "AES-256-GCM"
+        }
+      ],
+      "features": [
+        "Live PC screen on the phone with pinch-zoom, pan and a multi-monitor picker",
+        "Laptop-style trackpad, direct touch, Unicode typing and one-tap Windows shortcuts",
+        "QR-code pairing; works across networks with auto-reconnect",
+        "View-only mode, quality caps (540p to 1440p) and in-app update notice"
+      ],
+      "challenges": [
+        "Peer-to-peer without a relay: non-trickle ICE and three sealed setup messages per connection, keys derived with HKDF-SHA256",
+        "Switching monitors without renegotiation, using replaceTrack with 1.5 s JPEG previews over the data channel",
+        "Injecting mouse and keyboard input natively with SendInput (koffi) from an Electron host"
+      ],
+      "results": [
+        "Shipped v1.0.0 and v1.0.1: Windows x64 build plus Android APK on GitHub Releases",
+        "Headless end-to-end self-test plays the phone: pairing, 24 fps video, monitor switch, mouse and quality",
+        "Phone viewer is a reusable Android library (:screenview) with crypto cross-compatibility unit tests"
+      ],
+      "accentColor": "#38bdf8",
+      "status": "Completed",
+      "links": [
+        {
+          "label": "Download",
+          "url": "https://github.com/yashraj-shitole/GlidrScreen/releases/latest"
+        },
+        {
+          "label": "Architecture",
+          "url": "https://github.com/yashraj-shitole/GlidrScreen/blob/main/docs/ARCHITECTURE.md"
+        }
+      ]
+    },
+    {
+      "id": "glidr",
+      "name": "Glidr",
+      "tagline": "Your Android phone as a Bluetooth mouse, keyboard and media remote.",
+      "description": "Turns an Android phone into a trackpad, keyboard, media remote and voice-to-text input for a Windows PC using the Bluetooth HID Device profile, so the PC needs no software for basic control. An optional .NET 8 tray companion adds a live now-playing card with cover art. Ships with a scroll-driven 3D launch page covering Glidr and Glidr Screen.",
+      "role": "Author",
+      "year": 2026,
+      "duration": "Shipped",
+      "team": "Solo",
+      "url": null,
+      "githubUrl": "https://github.com/yashraj-shitole/Glidr",
+      "language": "Kotlin",
+      "stars": 0,
+      "topics": [
+        "bluetooth-hid",
+        "kotlin",
+        "jetpack-compose",
+        "dotnet",
+        "android"
+      ],
+      "source": "github",
+      "pushedAt": "2026-10-14T22:32:45Z",
+      "featured": true,
+      "techStack": [
+        {
+          "name": "Kotlin",
+          "category": "language"
+        },
+        {
+          "name": "Jetpack Compose",
+          "category": "framework"
+        },
+        {
+          "name": "Bluetooth HID",
+          "category": "framework"
+        },
+        {
+          "name": "C# / .NET 8",
+          "category": "language"
+        },
+        {
+          "name": "three.js",
+          "category": "framework"
+        }
+      ],
+      "metrics": [
+        {
+          "label": "report rate",
+          "value": "~125 Hz"
+        },
+        {
+          "label": "key layouts",
+          "value": "US / UK / DE"
+        },
+        {
+          "label": "releases",
+          "value": "v1.0 · v1.1"
+        }
+      ],
+      "features": [
+        "Trackpad with tap, two-finger scroll, right-click, press-and-hold drag and an acceleration curve",
+        "Keyboard sheet with Windows shortcuts and voice dictation; media keys with a volume dial",
+        "Keep-awake nudges run from a foreground service, promoted to an Android 16 Live Update",
+        "Midnight and Paper themes, four accents, haptics, auto-reconnect and an update banner"
+      ],
+      "challenges": [
+        "HID Device profile only works on a physical phone, and Windows caches the report descriptor at pairing",
+        "Allocation-free mouse hot path: reused buffers, batched reports and accumulated fractional deltas",
+        "Typing sends key codes rather than characters, so layouts are table-driven behind a HidTransport interface"
+      ],
+      "results": [
+        "Published v1.0.0 and v1.1.0: Android APK plus Windows tray companion on GitHub Releases",
+        "Unit tests plus Compose UI tests, passing on an emulator and a real Android 16 phone",
+        "Launch page for both apps built with plain HTML/CSS/JS and a three.js scene with live canvas textures"
+      ],
+      "accentColor": "#d4ff3f",
+      "status": "Completed",
+      "links": [
+        {
+          "label": "Download",
+          "url": "https://github.com/yashraj-shitole/Glidr/releases/latest"
+        },
+        {
+          "label": "Launch page",
+          "url": "https://github.com/yashraj-shitole/GlidrSite"
+        }
+      ]
+    },
     {
       "id": "dattayog",
       "name": "Dattayog Farmers PVT. LTD. Website",
@@ -609,8 +818,8 @@
     {
       "id": "opinions",
       "name": "Opinions - Thoughts Sharing Platform",
-      "tagline": "Full-stack MERN blogging platform with auth and CRUD.",
-      "description": "A full-stack blogging platform where users can create, edit, and delete blogs. Built with the MERN stack.",
+      "tagline": "Full-stack blogging platform with auth and CRUD.",
+      "description": "A full-stack blogging platform where users can create, edit, and delete blogs. Built with React, Node.js, Express and MongoDB.",
       "role": "Full Stack Developer",
       "year": 2023,
       "duration": "Self-initiated",
@@ -620,7 +829,7 @@
       "language": null,
       "stars": 0,
       "topics": [
-        "mern",
+        "nodejs",
         "blog",
         "fullstack"
       ],
@@ -655,7 +864,7 @@
         "Implementing JWT-based auth and route protection"
       ],
       "results": [
-        "Working full-stack reference app used to teach myself the MERN stack end to end"
+        "Working full-stack reference app used to teach myself full-stack JavaScript end to end"
       ],
       "accentColor": "#8b5cf6",
       "problem": "Addressed a real-world business or developer productivity challenge.",
@@ -950,8 +1159,9 @@
       "Software Engineer",
       "Angular",
       "React",
-      "Spring Boot",
+      "Express.js",
       "Node.js",
+      "PostgreSQL",
       "AI",
       "Full Stack",
       "Portfolio"

@@ -99,6 +99,14 @@ export function Nav() {
             </nav>
 
             <div className="flex items-center gap-1">
+              <a
+                href="/Yashraj-Shitole-CV.pdf"
+                download
+                data-cursor="// cv"
+                className="hidden md:inline-block px-3 py-2 label-cap border hairline rounded-full hover:text-accent transition-colors duration-base"
+              >
+                CV
+              </a>
               {/* Theme toggle. Monoline sun/moon, swaps on click.
                   aria-label and title announce the action; the icon
                   itself is a presentational SVG with aria-hidden. */}
@@ -210,10 +218,21 @@ export function Nav() {
                   {s.title}
                 </motion.button>
               ))}
-              <motion.button
+              <motion.a
+                href="/Yashraj-Shitole-CV.pdf"
+                download
                 initial={{ y: 12, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.05 + data.sections.length * 0.04 }}
+                className="block w-full text-left py-4 font-display text-3xl"
+                style={{ color: 'hsl(var(--ink-h) var(--ink-s) var(--ink-l))' }}
+              >
+                Download CV
+              </motion.a>
+              <motion.button
+                initial={{ y: 12, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.05 + (data.sections.length + 1) * 0.04 }}
                 onClick={toggleTheme}
                 className="mt-4 flex items-center gap-3 label-cap"
                 style={{ color: 'hsl(var(--ink-soft-h) var(--ink-soft-s) var(--ink-soft-l))' }}

@@ -27,7 +27,7 @@ const dataDir = resolve(__dirname, '..', 'src', 'data');
 //   - Project descriptions + URLs: resume wins (richer detail).
 const LINKEDIN_PASTE = {
   name: 'Yashraj Shitole',
-  headlineSkills: ['Java', 'Spring Boot', 'MySQL', 'TypeScript', 'ReactJS', 'Angular'],
+  headlineSkills: ['Java', 'MySQL', 'TypeScript', 'ReactJS', 'Angular'],
   location: 'Kolhapur, Maharashtra, India',
   followerCount: 574,
   experience: [
@@ -45,7 +45,7 @@ const LINKEDIN_PASTE = {
       start: '2024-01',
       end: '2024-08',
       mode: 'Hybrid',
-      skills: ['MERN Stack', 'React.js', '+1 skill'],
+      skills: ['React.js', 'Node.js', '+1 skill'],
     },
     {
       company: 'QSective Solutions',
@@ -181,7 +181,7 @@ function buildSkills() {
     },
     {
       category: 'Web Frameworks',
-      items: ['React', 'ReactJS', 'Angular', 'Spring Boot', 'Spring Framework', 'JSP', 'TailwindCSS', 'HTML', 'CSS'],
+      items: ['React', 'ReactJS', 'Angular', 'Spring Framework', 'JSP', 'TailwindCSS', 'HTML', 'CSS'],
     },
     {
       category: 'Backend',
@@ -205,7 +205,7 @@ function buildSkills() {
     },
     {
       category: 'Methodologies',
-      items: ['Agile', 'Waterfall', 'MERN Stack'],
+      items: ['Agile', 'Waterfall'],
     },
     {
       category: 'Soft Skills',
@@ -278,8 +278,8 @@ async function main() {
     profile: {
       name: LINKEDIN_PASTE.name, // LinkedIn: "Yashraj Shitole" (public-facing)
       // Full legal name from resume is "Yashraj Ranjeet Shitole" — see notes.
-      tagline: 'Java • Spring Boot • TypeScript • React • Angular',
-      bio: 'Full-stack software engineer with experience across Angular, MERN, and Spring Boot. Currently building production software at Raykor Technologies; previously interned at RacksonsIT Developers and QSective Solutions. PG Diploma in Advanced Computing (CDAC, SunBeam, 2025); B.Tech in Computer Science.',
+      tagline: 'Java • TypeScript • Angular • Node.js • PostgreSQL',
+      bio: 'Full-stack software engineer with experience across Angular, Node.js, Express, and PostgreSQL. Currently building production software at Raykor Technologies; previously interned at RacksonsIT Developers and QSective Solutions. PG Diploma in Advanced Computing (CDAC, SunBeam, 2025); B.Tech in Computer Science.',
       avatar: 'https://avatars.githubusercontent.com/u/71110021?v=4',
       location: LINKEDIN_PASTE.location,
       email: 'yashraj.r.shitole@gmail.com',

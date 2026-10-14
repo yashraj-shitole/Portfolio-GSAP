@@ -3,7 +3,7 @@ import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
 
 const ITEMS = [
-  'Angular', 'React', 'TypeScript', 'Spring Boot', 'Node.js',
+  'Angular', 'React', 'TypeScript', 'OrientDB', 'Node.js',
   'PostgreSQL', 'MongoDB', 'Tailwind', 'Express', 'REST APIs',
 ]
 

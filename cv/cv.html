@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Yashraj Shitole - Software Engineer - Resume</title>
+<meta name="author" content="Yashraj Shitole" />
+<meta name="description" content="Resume of Yashraj Shitole, Full Stack Software Engineer (Angular, React, Node.js, Express, PostgreSQL, Kotlin)." />
+<style>
+  /* ATS-safe: one column, no tables, no images, no icons, no text boxes,
+     system font, real text, contact details in the body (not a page header). */
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-variant-ligatures: none;
+    font-size: 9.2pt;
+    line-height: 1.3;
+    color: #000;
+    width: 210mm;
+    height: 297mm;
+    padding: 9mm 13mm 7mm 13mm;
+    overflow: hidden;
+  }
+  a { color: #000; text-decoration: none; }
+  h1 { font-size: 20pt; line-height: 1.1; letter-spacing: 0.02em; text-transform: uppercase; }
+  .role { font-size: 10.5pt; font-weight: bold; margin-top: 1.5mm; }
+  .contact { margin-top: 1.5mm; font-size: 9.2pt; }
+  h2 {
+    font-size: 10pt;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border-bottom: 0.8pt solid #000;
+    padding-bottom: 0.6mm;
+    margin: 2.8mm 0 1.2mm;
+  }
+  p, li { orphans: 3; }
+  .row { display: flex; justify-content: space-between; align-items: baseline; gap: 6mm; }
+  .row .when { white-space: nowrap; }
+  .head { font-weight: bold; }
+  .sub { font-style: italic; }
+  .entry + .entry { margin-top: 1.4mm; }
+  ul { margin: 0.6mm 0 0 4.4mm; }
+  li { margin-top: 0.3mm; padding-left: 0.6mm; }
+  .skills p { margin-top: 0.2mm; }
+  .skills b { font-weight: bold; }
+</style>
+</head>
+<body>
+
+<h1>Yashraj Shitole</h1>
+<div class="role">Software Engineer | Full Stack Developer</div>
+<div class="contact">
+  Kolhapur, Maharashtra, India | <a href="mailto:yashrajs927@gmail.com">yashrajs927@gmail.com</a> |
+  <a href="https://www.linkedin.com/in/yashraj-shitole-576442215/">linkedin.com/in/yashraj-shitole-576442215</a><br />
+  <a href="https://github.com/yashraj-shitole">github.com/yashraj-shitole</a> |
+  <a href="https://yashrajshitole.in">yashrajshitole.in</a>
+</div>
+
+<h2>Professional Summary</h2>
+<p>
+  Full Stack Software Engineer at Raykor Technologies building enterprise web applications with Angular, TypeScript,
+  Node.js, Express.js, PostgreSQL and OrientDB. Also ships Android (Kotlin, Jetpack Compose) and Windows (Electron, .NET) apps,
+  including WebRTC streaming and Bluetooth HID. B.Tech and PG-DAC graduate; experienced in REST API design, release
+  management, code reviews and AI-assisted development (RAG, LLM tool calling).
+</p>
+
+<h2>Technical Skills</h2>
+<div class="skills">
+  <p><b>Languages:</b> Java, TypeScript, JavaScript, Kotlin, C#, C++, Python, SQL</p>
+  <p><b>Frontend:</b> Angular, React, Tailwind CSS, HTML5, CSS3, Jetpack Compose</p>
+  <p><b>Backend:</b> Node.js, Express.js, FastAPI, REST APIs, JWT authentication</p>
+  <p><b>Databases:</b> PostgreSQL, OrientDB, MySQL, MongoDB</p>
+  <p><b>Mobile and Desktop:</b> Android (Kotlin, Java), Electron, .NET 8, WebRTC, Bluetooth HID</p>
+  <p><b>Tools and AI:</b> Git, GitHub, VS Code, Ollama, RAG, LLM Tool Calling, GitHub Copilot, Claude</p>
+</div>
+
+<h2>Professional Experience</h2>
+
+<div class="entry">
+  <div class="row"><span class="head">Software Engineer, Raykor Technologies Pvt. Ltd. <span style="font-weight:normal">| Pune District, Maharashtra (On-site)</span></span><span class="when">Apr 2025 - Present</span></div>
+  <ul>
+    <li>Built and shipped a multi-tenant Angular application used daily by client operators.</li>
+    <li>Designed and implemented REST APIs with Node.js and Express.js on PostgreSQL and OrientDB; owned the release pipeline and on-call rotation.</li>
+    <li>Built reusable components that improved maintainability; worked with cross-functional teams on requirements, debugging, testing and code reviews.</li>
+  </ul>
+</div>
+
+<div class="entry">
+  <div class="row"><span class="head">Full Stack Developer Intern, RacksonsIT Developers Pvt. Ltd.</span><span class="when">Jan 2024 - Aug 2024</span></div>
+  <ul>
+    <li>Gathered client requirements and delivered a responsive, cross-browser website with React, Tailwind CSS, Node.js and Express.js, from UI design to deployment.</li>
+  </ul>
+</div>
+
+<div class="entry">
+  <div class="row"><span class="head">Android Developer Intern, QSective Solutions</span><span class="when">Jul 2022 - Aug 2022</span></div>
+  <ul>
+    <li>Implemented UI components in Java for an internal Android tool and integrated REST endpoints with local storage.</li>
+  </ul>
+</div>
+
+<h2>Projects</h2>
+
+<div class="entry">
+  <div class="row"><span class="head">Glidr Screen - Remote PC Viewer and Controller</span><span class="when">Oct 2026</span></div>
+  <div class="sub">Kotlin, Jetpack Compose, WebRTC, Electron, Node.js | github.com/yashraj-shitole/GlidrScreen</div>
+  <ul>
+    <li>Built peer-to-peer PC screen streaming at 24 fps (hardware H.264) over WebRTC with no media server; QR-code pairing and AES-256-GCM sealed signaling with HKDF-SHA256 keys.</li>
+    <li>Developed the Electron Windows host (native SendInput) and a reusable Android viewer library with trackpad, multi-monitor switching and Unicode typing; validated by an end-to-end self-test and crypto unit tests.</li>
+  </ul>
+</div>
+
+<div class="entry">
+  <div class="row"><span class="head">Glidr - Phone as Bluetooth Mouse, Keyboard and Media Remote</span><span class="when">Oct 2026</span></div>
+  <div class="sub">Kotlin, Jetpack Compose, Bluetooth HID, C# .NET 8, three.js | github.com/yashraj-shitole/Glidr</div>
+  <ul>
+    <li>Built an Android app acting as a Bluetooth HID device with batched, allocation-free 125 Hz input reports, a foreground service and US, UK and DE layouts; covered by unit and Compose UI tests.</li>
+    <li>Built a .NET 8 tray companion (now-playing sync over Bluetooth RFCOMM) and a three.js launch page; published v1.0.0 and v1.1.0 on GitHub.</li>
+  </ul>
+</div>
+
+<div class="entry">
+  <div class="row"><span class="head">Project Athena - AI Assistant with Tool Calling and RAG</span><span class="when">2026</span></div>
+  <div class="sub">Python, FastAPI, PostgreSQL, Ollama (Qwen2.5) | github.com/yashraj-shitole/project-athena</div>
+  <ul>
+    <li>Implemented hybrid keyword and vector retrieval over PDF, DOCX and CSV files with citation-aware answers and a provider-agnostic tool registry on a local LLM.</li>
+  </ul>
+</div>
+
+
+<h2>Education</h2>
+<div class="entry">
+  <div class="row"><span class="head">PG Diploma in Advanced Computing (PG-DAC), SunBeam Institute of Information Technology</span><span class="when">Aug 2024 - Feb 2025</span></div>
+</div>
+<div class="entry">
+  <div class="row"><span class="head">B.Tech, Computer Science and Engineering, Sharad Institute of Technology College of Engineering</span><span class="when">2020 - 2024</span></div>
+</div>
+
+<h2>Certifications, Awards and Publications</h2>
+<ul>
+  <li>Certified Java Full Stack Professional, Grade A - Capgemini College Connect (EduBridge), 2024</li>
+  <li>Sunbeam Hackathon 2024 - Top 6 of 54 teams (Java and MySQL application)</li>
+  <li>Publication: "A Survey of Blockchain Technology", IJARIIE, December 2023</li>
+</ul>
+
+</body>
+</html>

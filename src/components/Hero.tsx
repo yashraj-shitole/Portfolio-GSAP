@@ -86,7 +86,28 @@ export function Hero() {
             <p className="hero__sub mt-8 max-w-xl text-[length:var(--type-md)] ink-soft">
               {data.profile.bio}
             </p>
-            <div className="hero__meta mt-10 flex flex-wrap gap-3">
+            <div className="hero__meta mt-8 flex flex-wrap gap-3">
+              <a
+                href="/Yashraj-Shitole-CV.pdf"
+                download
+                data-cursor="// cv"
+                className="label-cap inline-flex items-center gap-2 rounded-full px-5 py-2.5"
+                style={{
+                  background: 'hsl(var(--ink-h) var(--ink-s) var(--ink-l))',
+                  color: 'hsl(var(--bg-h) var(--bg-s) var(--bg-l))',
+                }}
+              >
+                Download CV <span aria-hidden="true">↓</span>
+              </a>
+              <a
+                href="#projects"
+                data-cursor="// work"
+                className="label-cap inline-flex items-center gap-2 rounded-full px-5 py-2.5 border hairline"
+              >
+                See projects <span aria-hidden="true">→</span>
+              </a>
+            </div>
+            <div className="hero__meta mt-6 flex flex-wrap gap-3">
               {data.profile.location && (
                 <span className="label-cap pill">
                   ◉ {data.profile.location}

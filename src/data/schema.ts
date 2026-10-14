@@ -54,6 +54,9 @@ export const ProjectSchema = z.object({
   challenges: z.array(z.string()),
   results: z.array(z.string()),
   accentColor: z.string(),
+  featured: z.boolean().optional(),
+  metrics: z.array(z.object({ label: z.string(), value: z.string() })).optional(),
+  links: z.array(z.object({ label: z.string(), url: z.string().url() })).optional(),
 })
 
 export const EducationSchema = z.object({

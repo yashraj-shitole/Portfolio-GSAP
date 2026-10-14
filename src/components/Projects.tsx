@@ -118,6 +118,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             <span className="label-cap">{project.year}</span>
             <span className="label-cap">{project.duration}</span>
             {project.team && <span className="label-cap">· {project.team}</span>}
+            {project.featured && <span className="label-cap text-accent">● New</span>}
           </div>
           <h3 className="mt-4 font-display text-3xl md:text-4xl font-medium tracking-tight leading-tight">
             {project.name}
@@ -128,6 +129,17 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           <p className="mt-6 text-[length:var(--type-base)] leading-relaxed max-w-prose">
             {project.description}
           </p>
+
+          {project.metrics && project.metrics.length > 0 && (
+            <dl className="mt-8 grid grid-cols-3 gap-4 border-y hairline py-4 max-w-md">
+              {project.metrics.map((m) => (
+                <div key={m.label}>
+                  <dt className="label-cap">{m.label}</dt>
+                  <dd className="mt-1 font-display text-lg font-medium tracking-tight">{m.value}</dd>
+                </div>
+              ))}
+            </dl>
+          )}
 
           <div className="mt-8 flex flex-wrap gap-2">
             {project.techStack.map((t) => (
@@ -169,6 +181,19 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                 <ArrowUpRight size={12} className="transition-transform duration-base group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
             )}
+            {project.links?.map((l) => (
+              <a
+                key={l.url}
+                href={l.url}
+                target="_blank"
+                rel="noreferrer"
+                data-cursor={`// ${l.label.toLowerCase()}`}
+                className="group inline-flex items-center gap-2 label-cap ink-soft hover:text-ink"
+              >
+                {l.label}
+                <ArrowUpRight size={12} className="transition-transform duration-base group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
+            ))}
           </div>
         </div>
 
